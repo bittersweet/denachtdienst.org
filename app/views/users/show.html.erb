@@ -14,3 +14,7 @@
 	</li>
 <% end %>
 </ul>
+
+<% if @profile.id == @user.id %>
+	<%= link_to "Add track", :controller => "tracks", :action => "new" %>
+<% end %>
