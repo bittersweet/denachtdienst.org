@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/footnotes"]
+	path = vendor/plugins/footnotes
+	url = git://github.com/drnic/rails-footnotes.git

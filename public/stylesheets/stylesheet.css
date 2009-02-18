@@ -4,6 +4,17 @@ body{
 	font-size: 13.34px;
 }
 
+#userinfo{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: #cafaba;
+	padding: 15px;
+}
+
+
+/* Form related styles */
+
 .standard_form{
 	background-color: #EAF2F5;
 	border: 20px solid #DDDDDD;
@@ -20,9 +31,10 @@ body{
 }
 
 .standard_form form input.text {
-font-size:110%;
+	font-size: 110%;
 }
+
 .standard_form form input.text, .standard_form form textarea {
-border:1px solid #888888;
-padding:5px;
+	border: 1px solid #888888;
+	padding: 5px;
 }
