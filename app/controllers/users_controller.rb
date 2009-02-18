@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  
+  def show
+    
+    if logged_in?
+      @profile = current_user
+    end
+    
+    @track = Track.find(:all, :conditions => { :user_id => params[:id]})
+    @user = User.find(params[:id])
+  end
 
   # render new.rhtml
   def new
@@ -22,4 +32,5 @@ class UsersController < ApplicationController
       render :action => 'new'
     end
   end
+  
 end
