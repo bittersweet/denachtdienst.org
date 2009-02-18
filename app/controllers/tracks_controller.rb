@@ -17,7 +17,7 @@ class TracksController < ApplicationController
     
     @track = Track.new
     @track.name = params[:track][:name]
-    @track.user_id = @user
+    @track.user_id = @user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
       redirect_to :controller => "tracks", :action => "index"
