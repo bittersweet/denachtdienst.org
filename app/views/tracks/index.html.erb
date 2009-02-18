@@ -5,7 +5,11 @@
 <ul id="tracklist">
 <% @track.each do |t| %>
 	<li><%= t.name %>
-	<%= link_to 'Show', t %> <%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></li>
-    
+		<%= link_to 'Show', t %> 
+		<% if @profile.id == @user.id %>
+			<%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %>
+	    <% end %>
+	</li>
 <% end %>
 </ul>
+
