@@ -34,7 +34,7 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    redirect_to :controller => "tracks", :action => "index"
+    redirect_to :back
     flash[:notice] = "Track verwijderd"
   end
   
