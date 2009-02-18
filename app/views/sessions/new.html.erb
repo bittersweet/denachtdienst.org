@@ -1,16 +1,18 @@
-<h1>Log In</h1>
+<div id="login" class="standard_form">
+	<h1>Login</h1>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+	<% form_tag session_path do -%>
+	<label for="login">
+		email<br />
+		<input class="text" id="login" name="login" style="width: 25em;" tabindex="1" type="text" value="" />
+	</label>
+	
+	<label for="password">
+		Password <br />
+		<input class="text" id="password" name="password" style="width: 25em;" tabindex="2" type="password" value="" />
+	</label>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+	<p><%= submit_tag 'Log in' %></p>
+	<% end -%>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>
+</div>

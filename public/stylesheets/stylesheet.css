@@ -1,0 +1,28 @@
+body{
+	background: #fff;
+	font-family: helvetica,arial,clean,sans-serif;
+	font-size: 13.34px;
+}
+
+.standard_form{
+	background-color: #EAF2F5;
+	border: 20px solid #DDDDDD;
+	margin: 3em auto 0;
+	padding: 2em 2em 1em;
+	width: 31em;
+}
+
+.standard_form form label, .standard_form form .label, label.standard{
+	color: #666666;
+	display: block;
+	font-size: 110%;
+	margin: 1em 0 0;
+}
+
+.standard_form form input.text {
+font-size:110%;
+}
+.standard_form form input.text, .standard_form form textarea {
+border:1px solid #888888;
+padding:5px;
+}
