@@ -8,6 +8,11 @@
 </head> 
 <body> 
 
+<% unless flash[:notice].blank? %> 
+	<div id="notification"><%= flash[:notice] %></div> 
+<% end %> 
+
+
 <%= yield %> 
 
 </body> 
