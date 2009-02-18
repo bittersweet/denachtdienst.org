@@ -18,10 +18,7 @@ class User < ActiveRecord::Base
   end
   # ---------------------------------------
   
-  
-  
-  
-  
+
   has_many :tracks
   
   include Authentication
