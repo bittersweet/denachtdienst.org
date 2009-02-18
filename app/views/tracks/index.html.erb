@@ -1,4 +1,11 @@
+<div id="title">
+	<%= @user.name %>
+</div>	
+
+<ul id="tracklist">
 <% @track.each do |t| %>
-	<div><%= t.name %> <%= link_to 'Show', t %> <%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></div>
+	<li><%= t.name %>
+	<%= link_to 'Show', t %> <%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></li>
     
 <% end %>
+</ul>

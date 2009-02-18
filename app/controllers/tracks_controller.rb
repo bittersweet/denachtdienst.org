@@ -1,6 +1,7 @@
 class TracksController < ApplicationController
   def index
     @track = Track.find(:all)
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -24,7 +25,6 @@ class TracksController < ApplicationController
   
   def show
     @track = Track.find(params[:id])
-    
   end
   
   def destroy

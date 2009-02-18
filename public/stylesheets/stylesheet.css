@@ -1,7 +1,35 @@
+/* Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* DND */
+
 body{
-	background: #fff;
-	font-family: helvetica,arial,clean,sans-serif;
-	font-size: 13.34px;
+	background: url(../images/bg.jpg) center top repeat-y #0d0d0f;
+    background-attachment: fixed;
+	font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 #userinfo{
@@ -19,6 +47,27 @@ body{
 	margin: 10px 0; 
 }
 
+#title{
+	padding: 20px;
+	background: #ABCABA;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+}
+
+/* Tracklisting */
+
+ul#tracklist{
+	width: 420px;
+	margin: 0 auto;
+}
+
+#tracklist li{
+	margin-top: 5px;
+	width: 400px;
+	background: #fcc;
+	padding: 10px;
+}
 
 /* Form related styles */
 
