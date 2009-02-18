@@ -1,5 +1,5 @@
 <%= error_messages_for :track %>
-<% form_for @track do |f| -%>
+<% form_for @track, :url => { :action => "create" } do |f| %>
 
 <p><%= label_tag 'name' %><br/>
 <%= f.text_field :name %></p>
