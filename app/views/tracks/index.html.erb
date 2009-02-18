@@ -1,4 +1,4 @@
 <% @track.each do |t| %>
-	<div><%= t.name %><%= link_to 'Show', t %></div>
+	<div><%= t.name %> <%= link_to 'Show', t %> <%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></div>
     
 <% end %>
