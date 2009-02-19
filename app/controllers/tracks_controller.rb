@@ -22,7 +22,6 @@ class TracksController < ApplicationController
       flash[:notice] = "Track toevoeging gelukt"
       redirect_to :controller => "users", :action => "show", :id => @user.id
     else
-      flash[:notice] = "Je moet wel wat invoeren"
       render :action => 'new'
     end
   end
