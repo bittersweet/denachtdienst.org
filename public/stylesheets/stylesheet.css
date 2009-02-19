@@ -63,12 +63,12 @@ input{
 	left: 0px;
 }
 
-/* Tracklisting */
-
-ul#tracklist{
+#wrapper{
+	margin: 40px auto;
 	width: 420px;
-	margin: 0 auto;
 }
+
+/* Tracklisting */
 
 #tracklist li{
 	margin-top: 5px;
