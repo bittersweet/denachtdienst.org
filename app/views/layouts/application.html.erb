@@ -10,9 +10,9 @@
 
 <div id="userinfo">
 	<% if logged_in? %>
-		Sup <strong><%= current_user.login %></strong>
+		Sup <strong><%= current_user.login %></strong> <%= link_to 'Logout', logout_path %>
 	<% else %>
-		<%= link_to 'Login', 'login' %>
+		<%= link_to 'Login', login_path %>
 	<% end %>
 </div>	
 
