@@ -8,6 +8,14 @@
 </head> 
 <body> 
 
+<div id="userinfo">
+	<% if logged_in? %>
+		Sup <strong><%= current_user.login %></strong>
+	<% else %>
+		<%= link_to 'Login', 'login' %>
+	<% end %>
+</div>	
+
 <% unless flash[:notice].blank? %> 
 	<div id="notification"><%= flash[:notice] %></div> 
 <% end %> 
