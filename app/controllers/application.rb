@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
 
   # has to be a class method so I can call it from every page
+  # Can maybe be turned into a helper method
+  # http://api.rubyonrails.org/classes/ActionController/Helpers/ClassMethods.html
   def self.logged_in?
     @profile = current_user
   end
