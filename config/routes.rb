@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tracks
   map.resource :session
 
+
+  map.root :controller => 'tracks'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
