@@ -4,10 +4,6 @@ class TracksController < ApplicationController
 
   def index
     @track = Track.find(:all)
-
-    if logged_in?
-      @profile = current_user
-    end
   end
 
   def new
