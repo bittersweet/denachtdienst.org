@@ -3,5 +3,9 @@
   <%=h @track.name %>
 </p>
 
+<% if @track.mp3.exists? then %>
+<%= @track.mp3.url %>
+<% end %>
+
 <%= link_to 'Back', users_path %>
 <%= link_to 'back', track_path %>
