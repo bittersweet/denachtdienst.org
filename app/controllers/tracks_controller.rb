@@ -16,6 +16,7 @@ class TracksController < ApplicationController
     @user = current_user
     @track = Track.new
     @track.name = params[:track][:name]
+    @track.mp3 = params[:track][:mp3]
     @track.user_id = @user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"

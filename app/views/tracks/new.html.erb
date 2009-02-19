@@ -1,9 +1,12 @@
 <div class="standard_form">
 	<%= error_messages_for :track, :header_message => "Oh noes", :message => "We hebben wat probleempjes"  %>
-	<% form_for @track, :url => { :action => "create" } do |f| %>
+	<% form_for @track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
 
 	<p><%= label_tag 'Naam van de track' %><br/>
 	<%= f.text_field :name %></p>
+	
+	<p><%= label_tag 'Bestand' %><br/>
+	<%= f.file_field :mp3 %>
 
 	<p><%= submit_tag 'submit' %></p>
 	<% end -%>
