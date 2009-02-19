@@ -1,4 +1,7 @@
 class TracksController < ApplicationController
+  #Only need to login if you want to create a new track
+  before_filter :login_required, :only => [ :new, :destroy ]
+
   def index
     @track = Track.find(:all)
 
