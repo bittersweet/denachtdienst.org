@@ -32,6 +32,13 @@ body{
 	font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+p{
+	margin-top: 10px;
+}
+input{
+	margin-top: 5px;
+}
+
 #userinfo{
 	position: absolute;
 	top: 0px;
