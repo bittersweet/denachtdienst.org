@@ -8,7 +8,7 @@
 		<li><%= t.name %>
 			<%= link_to 'Show', t %>
 			<% if logged_in? %>
-				<% if @profile.id == @user.id %>
+				<% if current_user.id == @user.id %>
 					<%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %>
 			    <% end %>
 			<% end %>
@@ -16,7 +16,7 @@
 	<% end %>
 	</ul>
 
-	<% if @profile.id == @user.id %>
+	<% if current_user.id == @user.id %>
 		<%= link_to "Add track", :controller => "tracks", :action => "new" %>
 	<% end %>
 

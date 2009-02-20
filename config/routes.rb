@@ -8,6 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
 
 
+  # todo http://api.rubyonrails.org/classes/ActionController/Routing.html
+  # pretty urls
+  
   map.root :controller => 'tracks'
   # The priority is based upon order of creation: first created -> highest priority.
 
