@@ -3,7 +3,9 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
-    @track = Track.find(:all)
+    unless read_fragment({})
+      @track = Track.find(:all)
+    end
   end
 
   def new
