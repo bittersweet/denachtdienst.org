@@ -70,11 +70,22 @@ input{
 
 /* Tracklisting */
 
+#tracklist{
+	font-family: Georgia, serif;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
 #tracklist li{
-	margin-top: 5px;
 	width: 400px;
+	height: 25px;
 	background: #fcc;
 	padding: 10px;
+}
+
+.meta{
+	font-size: 0.7em;
+	float: right;
 }
 
 /* Form related styles */

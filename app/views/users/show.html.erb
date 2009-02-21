@@ -6,12 +6,14 @@
 	<ul id="tracklist">
 	<% @track.each do |t| %>
 		<li><%= t.name %>
-			<%= link_to 'Show', t %>
+			<span class="meta">
+			<%= link_to 'link', t %> | 
 			<% if logged_in? %>
 				<% if current_user.id == @user.id %>
-					<%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %>
+					<%= link_to 'delete', t, :confirm => 'Are you sure?', :method => :delete %>
 			    <% end %>
 			<% end %>
+			</span>
 		</li>
 	<% end %>
 	</ul>
