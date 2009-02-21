@@ -12,10 +12,11 @@
 
 	<div id="userinfo">
 		<% if logged_in? %>
-			<strong><%= link_to current_user.login, :controller => "users", :action => "show", :id => current_user.id %></strong> | <%= link_to "Add track", :controller => "tracks", :action => "new" %> | 
-			<%= link_to 'Logout', logout_path %>
+			<%= link_to current_user.login, current_user, :class => "button" %>
+			<%= link_to "Add track", new_track_path, :class => "button" %>
+			<%= link_to 'Logout', logout_path, :class => "button" %>
 		<% else %>
-			<%= link_to 'Login', login_path %>
+			<%= link_to 'Login', login_path, :class => "button" %>
 		<% end %>
 	</div>
 	
