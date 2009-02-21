@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  
+
+  caches_action :show
+
   def show
     @track = Track.find(:all, :conditions => { :user_id => params[:id]})
     @user = User.find(params[:id])
@@ -21,9 +23,9 @@ class UsersController < ApplicationController
       # reset session
       self.current_user = @user # !! now logged in
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      flash[:notice] = "Je bent geregistreerd."
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "Het ging niet helemaal goed..."
       render :action => 'new'
     end
   end
