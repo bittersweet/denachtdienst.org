@@ -18,11 +18,4 @@
 		</li>
 	<% end %>
 	</ul>
-
-	<% if logged_in? %>
-		<% if current_user.id == @user.id %>
-			<%= link_to "Add track", :controller => "tracks", :action => "new" %>
-		<% end %>
-	<% end %>
-
 </div>
