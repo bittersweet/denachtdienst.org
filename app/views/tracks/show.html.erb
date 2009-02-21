@@ -1,6 +1,12 @@
 <% cache do %>
-	<%=h @track.name %>
-	<%= @track.mp3.url %>
+<div id="wrapper">
+	<ul id="tracklist">
+		<li><span class="informatie"><%= @track.name %></span>
+			<span class="meta"> 
+			<%= link_to image_tag("download.png", :alt => 'Download'), @track.mp3.url %>
+			<%= link_to image_tag("attach.png", :alt => 'Link'), @track %>		
+			</span>
+		</li>
+	</ul>	
+</div>
 <% end %>
-
-<%= link_to 'Back', users_path %>
