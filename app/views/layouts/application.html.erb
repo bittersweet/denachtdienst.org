@@ -8,19 +8,22 @@
 </head> 
 <body> 
 
-<div id="userinfo">
-	<% if logged_in? %>
-		<strong><%= link_to current_user.login, :controller => "users", :action => "show", :id => current_user.id %></strong> | 
-		<%= link_to 'Logout', logout_path %>
-	<% else %>
-		<%= link_to 'Login', login_path %>
-	<% end %>
-</div>	
+<div id="header">
+
+	<div id="userinfo">
+		<% if logged_in? %>
+			<strong><%= link_to current_user.login, :controller => "users", :action => "show", :id => current_user.id %></strong> | 
+			<%= link_to 'Logout', logout_path %>
+		<% else %>
+			<%= link_to 'Login', login_path %>
+		<% end %>
+	</div>
+	
+</div>
 
 <% unless flash[:notice].blank? %> 
 	<div id="notification"><%= flash[:notice] %></div> 
 <% end %> 
-
 
 <%= yield %> 
 

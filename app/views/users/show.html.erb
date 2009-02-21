@@ -1,25 +1,28 @@
 <div id="title">
-	<%= @user.name %>
+	<h2><%= @user.name %></h2>
 </div>	
 
 <div id="wrapper">
 	<ul id="tracklist">
 	<% @track.each do |t| %>
-		<li><%= t.name %>
-			<span class="meta">
-			<%= link_to 'link', t %> | 
+		<li><span class="informatie"><%= t.name %></span>
+			<span class="meta"> 
 			<% if logged_in? %>
 				<% if current_user.id == @user.id %>
-					<%= link_to 'delete', t, :confirm => 'Are you sure?', :method => :delete %>
+					<%= link_to 'link', t %> | <%= link_to 'delete', t, :confirm => 'Are you sure?', :method => :delete %>
 			    <% end %>
-			<% end %>
+			<% else %>
+				<%= link_to 'link', t %>
+			<% end %>		
 			</span>
 		</li>
 	<% end %>
 	</ul>
 
-	<% if current_user.id == @user.id %>
-		<%= link_to "Add track", :controller => "tracks", :action => "new" %>
+	<% if logged_in? %>
+		<% if current_user.id == @user.id %>
+			<%= link_to "Add track", :controller => "tracks", :action => "new" %>
+		<% end %>
 	<% end %>
 
 </div>
