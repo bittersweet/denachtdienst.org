@@ -42,7 +42,7 @@ input{
 #header{
 	margin-bottom: 50px;
 	width: 100%;
-	height: 50px;
+	height: 60px;
 	background: #8B8BB1;
 }
 
@@ -101,6 +101,27 @@ div#title{
 
 .informatie{
 	float: left;
+}
+
+a.button{
+	display: inline-block;
+	margin-right: 10px;
+	padding: 8px 20px 8px 16px;;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: none;
+	font-size: 11px;
+	color: #ccc;
+	background: #333;
+	cursor: pointer;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.button:hover{
+	color: #000;
+	background-color: #ccc;
 }
 
 /* Form related styles */
