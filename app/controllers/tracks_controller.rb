@@ -3,6 +3,7 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
+    #checks to see if the page is cached, if not the query gets executed
     unless read_fragment({})
       @track = Track.find(:all)
     end
@@ -28,7 +29,9 @@ class TracksController < ApplicationController
   end
   
   def show
-    @track = Track.find(params[:id])
+    unless read_fragment({})
+      @track = Track.find(params[:id])
+    end
   end
   
   def destroy
