@@ -95,6 +95,10 @@ div#title{
 	float: right;
 }
 
+.meta img{
+	padding: 2px;
+}
+
 .informatie{
 	float: left;
 }

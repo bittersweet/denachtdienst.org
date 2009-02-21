@@ -5,12 +5,14 @@
 <div id="wrapper">	
 	<ul id="tracklist">
 		<% @track.each do |t| %>
-		<li><%= t.name %>
-			<% if t.mp3.exists? then %>
-				<%= link_to 'download', t.mp3.url %>
+		<li><span class="informatie"><%= t.name %></span>
+			<span class="meta">
+				<% if t.mp3.exists? then %>
+					<%= link_to image_tag("download.png", :alt => 'Download'), t.mp3.url %>
 				<% end %>
-				<%= link_to 'Show', t %>
-			</li>
+				<%= link_to image_tag("attach.png", :alt => 'Link'), t %>
+			</span>
+		</li>
 		<% end %>
 	</ul>
 </div>	
