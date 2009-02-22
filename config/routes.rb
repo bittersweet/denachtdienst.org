@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => :tracks
   map.resources :tracks
   map.resource :session
-
+  map.status '/status', :controller => 'users', :action => 'status'
 
   # todo http://api.rubyonrails.org/classes/ActionController/Routing.html
   # pretty urls
