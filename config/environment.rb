@@ -49,9 +49,8 @@ Rails::Initializer.run do |config|
   # All files from config/locales/*.rb,yml are added automatically.
   # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-
-  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
-
+  config.cache_store = :file_store, '/public/cache/'
+  
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
