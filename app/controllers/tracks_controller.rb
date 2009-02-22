@@ -26,7 +26,7 @@ class TracksController < ApplicationController
     @track.user_id = @user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
-      redirect_to :controller => "users", :action => "show", :id => @user.id
+      redirect_to :controller => "users", :action => "manage"
     else
       render :action => 'new'
     end
