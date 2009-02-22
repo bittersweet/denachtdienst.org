@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def profile
+    @user = current_user
+  end
+  
   def manage
     @track = Track.find(:all, :conditions => { :user_id => current_user.id})
     @user = User.find(current_user.id)
