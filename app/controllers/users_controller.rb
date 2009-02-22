@@ -13,6 +13,21 @@ class UsersController < ApplicationController
     @user = current_user
   end
   
+  def edit
+    @user = User.find(current_user.id)
+  end
+
+  def update
+    @user = User.find(current_user.id)
+
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'User was successfully updated.'
+      redirect_to(@user)
+    else
+      render :action => "edit" 
+    end
+  end
+
   def manage
     @track = Track.find(:all, :conditions => { :user_id => current_user.id})
     @user = User.find(current_user.id)
