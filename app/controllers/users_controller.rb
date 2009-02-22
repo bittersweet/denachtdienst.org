@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   cache_sweeper :user_sweeper,
                 :only => [:update, :destroy]  
   
+  before_filter :login_required, :only => [ :edit, :update, :manage, :profile ]  
+  
   def show
     @track = Track.find(:all, :conditions => { :user_id => params[:id]})
     @user = User.find(params[:id])
