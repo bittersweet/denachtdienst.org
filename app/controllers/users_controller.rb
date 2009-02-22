@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def manage
+    @track = Track.find(:all, :conditions => { :user_id => current_user.id})
+    @user = User.find(current_user.id)
+  end
+  
   def status
     render :partial => 'users/status/'
   end
@@ -23,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
-            # Protects against session fixation attacks, causes request forgery
+      # Protects against session fixation attacks, causes request forgery
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset session
