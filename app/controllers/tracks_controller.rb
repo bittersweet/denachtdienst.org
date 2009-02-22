@@ -2,6 +2,9 @@ class TracksController < ApplicationController
 
   caches_page :index, :show, :new
 
+  cache_sweeper :track_sweeper,
+                :only => [:create, :destroy]
+
   #Only need to login if you want to create a new track
   before_filter :login_required, :only => [ :new, :destroy ]
 
