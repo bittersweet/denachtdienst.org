@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
 
-  caches_page :new, :show
+  protect_from_forgery :only => [:create, :update, :destroy] 
+  
+  caches_page :show
   
   def show
     @track = Track.find(:all, :conditions => { :user_id => params[:id]})
     @user = User.find(params[:id])
+  end
+  
+  def status
+    render :partial => 'users/status/'
   end
 
   # render new.rhtml
