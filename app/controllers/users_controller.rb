@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   
   caches_page :show
   
+  cache_sweeper :user_sweeper,
+                :only => [:update, :destroy]  
+  
   def show
     @track = Track.find(:all, :conditions => { :user_id => params[:id]})
     @user = User.find(params[:id])
@@ -21,7 +24,6 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
 
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'User was successfully updated.'
       redirect_to(@user)
     else
       render :action => "edit" 
