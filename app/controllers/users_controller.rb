@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  caches_page :new, :show
+  
   def show
     @track = Track.find(:all, :conditions => { :user_id => params[:id]})
     @user = User.find(params[:id])

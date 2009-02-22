@@ -1,12 +1,13 @@
 class TracksController < ApplicationController
+
+  caches_page :index, :show, :new
+
   #Only need to login if you want to create a new track
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
     #checks to see if the page is cached, if not the query gets executed
-    unless read_fragment({})
       @track = Track.find(:all)
-    end
   end
 
   def new
@@ -29,9 +30,7 @@ class TracksController < ApplicationController
   end
   
   def show
-    unless read_fragment({})
       @track = Track.find(params[:id])
-    end
   end
   
   def destroy
