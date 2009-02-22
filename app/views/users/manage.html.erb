@@ -7,6 +7,11 @@
 	<% @track.each do |t| %>
 		<li><span class="informatie"><%= t.name %></span>
 			<span class="meta"> 
+			<% if logged_in? %>
+				<% if current_user.id == @user.id %>
+				<%= link_to image_tag("file_delete.png", :alt => 'Delete'), t, :confirm =>  'Weet je het zeker?', :method => :delete %>
+			    <% end %>
+			<% end %>
 			<%= link_to image_tag("download.png", :alt => 'Download'), t.mp3.url %>
 			<%= link_to image_tag("attach.png", :alt => 'Link'), t %>		
 			</span>
