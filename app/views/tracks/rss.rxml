@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "deNachtdienst.org tracks"
+   xml.link        url_for :only_path => false, :controller => 'tracks'
+   xml.description "Alle tracks die op denachtdienst.org worden geupload."
+
+   @track.each do |track|
+     xml.item do
+       xml.title       track.name
+       xml.link        url_for :only_path => false, :controller => 'tracks', :action => 'show', :id => track.id
+       xml.description root_url.chop + track.mp3.url
+       xml.guid        url_for :only_path => false, :controller => 'tracks', :action => 'show', :id => track.id
+     end
+   end
+
+ end
+end

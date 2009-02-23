@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.manage '/users/manage', :controller => 'users', :action => 'manage'
   map.profile '/users/profile', :controller => 'users', :action => 'profile'
   map.edit_profile '/users/profile/edit', :controller => 'users', :action => 'edit'
+  map.rss '/tracks/rss', :controller => 'tracks', :action => 'rss'
   map.resources :users, :has_many => :tracks
   map.resources :tracks
   map.resource :session

@@ -43,4 +43,10 @@ class TracksController < ApplicationController
     flash[:notice] = "Track verwijderd"
   end
   
+  def rss
+    @track = Track.find(:all, :order => "id DESC", :limit => "30")
+    render :layout => false
+    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+  end
+  
 end
