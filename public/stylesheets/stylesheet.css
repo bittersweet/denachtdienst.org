@@ -81,7 +81,7 @@ div#title{
 	width: 420px;
 }
 
-/* links */
+/* Typography / Links */
 
 a{
 	color: #333;
@@ -91,6 +91,16 @@ a{
 a:hover{
 /*	color: #fff;*/
 	color: #ccc;
+}
+
+h1{
+	font-size: 2em;
+}
+
+h1.username{
+	display: inline;
+	color: #8B8BB1;
+	margin-bottom: 20px;
 }
 
 /* Tracklisting */

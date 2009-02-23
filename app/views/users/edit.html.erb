@@ -1,13 +1,14 @@
+<div class="standard_form">
 <% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+	<%= f.error_messages %>
 
-  <p>
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-
+	<%= f.label :name, "Display name" %>
 	<%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+	
+	<%= f.label :email, "Email address" %>
+	<%= f.text_field :email %>
+
+	<%= f.submit "Update" %>
+
 <% end %>
+</div>

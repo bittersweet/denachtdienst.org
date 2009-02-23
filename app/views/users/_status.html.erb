@@ -1,5 +1,5 @@
 <% if logged_in? %>
-	<%= link_to "Profile", edit_profile_path, :class => "button" %>
+	<%= link_to "Profile", profile_path, :class => "button" %>
 	<%= link_to "Manage tracks", manage_path, :class=> "button" %>
 	<%= link_to "Add track", new_track_path, :class => "button" %>
 	<%= link_to 'Logout', logout_path, :class => "button" %>

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
 
     if @user.update_attributes(params[:user])
-      redirect_to(@user)
+      redirect_to profile_path
     else
       render :action => "edit" 
     end
