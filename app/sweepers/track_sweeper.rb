@@ -12,7 +12,7 @@ class TrackSweeper < ActionController::Caching::Sweeper
   
   def clear_tracks_cache(track)
     expire_page :controller => :tracks, :action => :show, :id => track
-    expire_page :controller => :tracks, :action => :index
+    expire_page '/index.html'
     expire_page :controller => :users, :action => :show, :id => current_user.id
   end
   
