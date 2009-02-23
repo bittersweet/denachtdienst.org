@@ -46,6 +46,13 @@ input{
 	background: #8B8BB1;
 }
 
+#header h1{
+	padding-left: 4px;
+	margin-top: -3px;
+	float: left;
+	font-size: 4em;
+}
+
 #userinfo{
 	float: right;
 	padding: 15px;
@@ -72,6 +79,18 @@ div#title{
 #wrapper{
 	margin: 0 auto;
 	width: 420px;
+}
+
+/* links */
+
+a{
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover{
+/*	color: #fff;*/
+	color: #ccc;
 }
 
 /* Tracklisting */
