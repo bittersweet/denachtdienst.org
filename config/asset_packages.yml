@@ -1,0 +1,11 @@
+--- 
+javascripts: 
+- base: 
+  - prototype
+  - soundmanager2
+  - page-player
+stylesheets: 
+- base: 
+  - stylesheet
+  - page-player
+  
