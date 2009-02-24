@@ -105,7 +105,7 @@ h1.username{
 
 /* Tracklisting */
 
-#tracklist{
+/*#tracklist{
 	font-family: Georgia, serif;
 	font-size: 1.2em;
 	line-height: 1.2em;
@@ -116,7 +116,7 @@ h1.username{
 	height: 20px;
 	background: #fcc;
 	padding: 20px;
-}
+}*/
 
 .meta{
 	text-align: right;
@@ -178,25 +178,3 @@ a.button:hover{
 	border: 1px solid #888888;
 	padding: 5px;
 }
-
-
-a.sm2_link {
-	display:inline-block;
-	 padding-left:22px;
-	 min-height:16px;
-	 padding:0px 3px 0px 20px;
-	 min-width:19em;
-	 color:#fff;
-	 text-shadow: 0 0 0 #000;
-}
-a.sm2_link:hover {
-	color: #cab;
-}
-
-
-a.sm2_playing {}
-a.sm2_playing:hover {}
-
-
-a.sm2_paused {}
-a.sm2_paused:hover {}
