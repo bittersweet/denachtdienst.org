@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>DND</title> 
+	<title>DND</title>
 	<%= stylesheet_link_tag 'stylesheet' %> 
 	<%= javascript_include_tag :all %>
-	
+	<%= auto_discovery_link_tag(:rss, {:controller => "tracks", :action => "rss"}) %>
 </head> 
 <body> 
 
