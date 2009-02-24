@@ -1,10 +1,8 @@
 <div id="wrapper">
-	<ul id="tracklist">
-		<li><span class="informatie"><%= @track.name %></span>
-			<span class="meta"> 
-			<%= link_to image_tag("download.png", :alt => 'Download'), @track.mp3.url %>
-			<%= link_to image_tag("attach.png", :alt => 'Link'), @track %>		
-			</span>
+	<ul class="playlist">
+		<li><%= link_to @track.name, @track.mp3.url %>
 		</li>
-	</ul>	
+	</ul>
 </div>
+
+<%= render :partial => "pageplayer" %>
