@@ -2,4 +2,5 @@ public/index.html
 public/tracks/*
 public/users/*
 public/cache/*
+public/tracks.html
 *_packaged.*
