@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
 
-  caches_page :index, :show
+  caches_page :index, :show, :rss
 
   cache_sweeper :track_sweeper,
                 :only => [:create, :destroy]

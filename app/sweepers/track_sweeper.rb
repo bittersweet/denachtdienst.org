@@ -14,6 +14,7 @@ class TrackSweeper < ActionController::Caching::Sweeper
     expire_page :controller => :tracks, :action => :show, :id => track
     expire_page '/index.html'
     expire_page :controller => :users, :action => :show, :id => current_user.id
+    expire_page :controller => :tracks, :action => :rss
   end
   
 end
