@@ -8,12 +8,11 @@ ul.playlist li {
  /* assume all items will be sounds rather than wait for onload etc. in this example.. may differ for your uses. */
 position:relative;
 display: block;
-font-size: 1.3em;
+font-size: 1.25em;
 line-height: 1.6em;
 color: #666;
 padding: 0.25em 0.5em 0.25em 0.5em;
 border: none;
-letter-spacing: -1px; /* ZOMG WEB X.0. ;) */
 background: #8B8;
 }
 
