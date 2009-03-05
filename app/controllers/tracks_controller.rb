@@ -3,7 +3,7 @@ class TracksController < ApplicationController
   caches_page :index, :show, :rss
 
   cache_sweeper :track_sweeper,
-                :only => [:create, :destroy]
+                :only => [:create, :update, :destroy]
 
   #Only need to login if you want to create a new track
   before_filter :login_required, :only => [ :new, :destroy ]
@@ -34,6 +34,20 @@ class TracksController < ApplicationController
   
   def show
       @track = Track.find(params[:id])
+  end
+
+  def edit
+    @track = Track.find(params[:id])
+  end
+
+  def update
+    @track = Track.find(params[:id])
+
+    if @track.update_attributes(params[:track])
+      redirect_to track_path(params[:id])
+    else
+      render :action => "edit" 
+    end
   end
   
   def destroy

@@ -1,0 +1,11 @@
+<div class="standard_form">
+<% form_for(@track) do |f| %>
+	<%= f.error_messages %>
+
+	<%= f.label :name, "Track name" %>
+	<%= f.text_field :name %>
+	
+	<%= f.submit "Update" %>
+
+<% end %>
+</div>
