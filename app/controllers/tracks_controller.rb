@@ -38,6 +38,11 @@ class TracksController < ApplicationController
 
   def edit
     @track = Track.find(params[:id])
+    @user = current_user
+    
+    if @track.user_id != @user.id
+      redirect_to root_path
+    end
   end
 
   def update
