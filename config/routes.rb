@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tracks
   map.resource :session
   map.status '/status', :controller => 'users', :action => 'status'
-
+  
   # todo http://api.rubyonrails.org/classes/ActionController/Routing.html
   # pretty urls
   
@@ -57,4 +57,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+
+  map.error '*path', :controller => 'application', :action => 'rescue_404'
+
 end

@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
   # You can move this into a different controller, if you wish.  This module gives you the require_role helpers, and others.
   include RoleRequirementSystem
   
+  rescue_from ActiveRecord::RecordNotFound, ActionController::UnknownAction, :with => :rescue_404
+  
+  def rescue_404
+    @page_title = "Page not found"
+    render :file => "public/404.html", :status => "404"
+    #render :template => 
+    # if I render a template it gets put in the default layout
+    logger.warn("PAGE NOT FOUND :: #{request.request_uri} :: #{Time.now}")
+  end
+  
   #this override redirects the user to /login instead of /session/new
   def access_denied
     alias new_session_path login_path
