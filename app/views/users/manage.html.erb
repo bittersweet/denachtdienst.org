@@ -10,6 +10,7 @@
 			<% if logged_in? %>
 				<% if current_user.id == @user.id %>
 				<%= link_to image_tag("file_delete.png", :alt => 'Delete'), t, :confirm =>  'Weet je het zeker?', :method => :delete %>
+				<%= link_to image_tag("file_edit.png", :alt => 'Edit'), edit_track_path(t) %>
 			    <% end %>
 			<% end %>
 			<%= link_to image_tag("download.png", :alt => 'Download'), t.mp3.url %>
