@@ -69,7 +69,6 @@ input{
 div#title{
 	padding-left: 20px;
 	color: #fff;
-	font-size: 2em;
 	line-height: 1.3em;
 	height: 20px;
 	width: 200px;
@@ -77,9 +76,35 @@ div#title{
 	top: 100px;
 }
 
+#title h2{
+	font-size: 2em;
+	font-weight: normal;
+}
+
 #wrapper{
 	margin: 0 auto;
 	width: 420px;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #8B8BB1;
+}
+
+#artists{
+
+}
+
+.artist{
+	height: 100px;
+	width: 100px;
+	float: left;
+	margin-left: 50px;
+	margin-bottom: 50px;
+	background: pink;
+	padding: 2px;
 }
 
 /* Typography / Links */

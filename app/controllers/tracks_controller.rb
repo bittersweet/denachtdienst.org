@@ -11,6 +11,7 @@ class TracksController < ApplicationController
   def index
     #checks to see if the page is cached, if not the query gets executed
       @track = Track.find(:all)
+      @user = User.find(:all)
   end
 
   def new

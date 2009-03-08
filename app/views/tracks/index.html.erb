@@ -1,5 +1,5 @@
 <div id="title">
-	deNachtDienst
+	<h2>deNachtDienst</h2>
 </div>
 
 <div id="wrapper">
@@ -12,3 +12,13 @@
 </div>
 
 <%= render :partial => "/tracks/pageplayer" %>
+
+<div id="footer">
+	
+	<div id="artists">
+		<% @user.each do |u| %>
+			<div class="artist"><%= link_to u.name, u %></div>
+		<% end %>
+	</div>
+
+</div>
