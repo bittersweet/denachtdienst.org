@@ -102,8 +102,12 @@ div#title{
 	width: 100px;
 	float: left;
 	margin: 25px;
-	background: pink;
+	background: #333;
 	padding: 5px;
+}
+
+.artist:hover{
+	background: #ccc;
 }
 
 .artist img{
