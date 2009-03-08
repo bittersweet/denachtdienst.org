@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
   
 
   has_many :tracks
+  has_attached_file :avatar
+  
+#  validates_presence_of :avatar_file_name, :on => :create, :message => "Je moet een avatar uploaden"
+#  validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
+  
   
   include Authentication
   include Authentication::ByPassword

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090221213354) do
+ActiveRecord::Schema.define(:version => 20090308121126) do
 
   create_table "roles", :force => true do |t|
     t.string "name"
@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(:version => 20090221213354) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "permalink"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
