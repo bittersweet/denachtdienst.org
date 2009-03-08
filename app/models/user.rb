@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   has_many :tracks
   has_attached_file :avatar
   
-#  validates_presence_of :avatar_file_name, :on => :create, :message => "Je moet een avatar uploaden"
-#  validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
+  validates_presence_of :avatar_file_name, :message => "avatar"
+  # validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
   
   
   include Authentication
@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :avatar, :password_confirmation
 
 
 

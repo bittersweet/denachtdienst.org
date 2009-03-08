@@ -24,13 +24,20 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-
+  
     if @user.update_attributes(params[:user])
       redirect_to profile_path
     else
       render :action => "edit" 
     end
   end
+
+  # def update
+  #   @user = User.find(current_user.id)
+  #   
+  #   @user.avatar = params[:user][:avatar]
+  #   @user.save
+  # end
 
   def manage
     @track = Track.find(:all, :conditions => { :user_id => current_user.id})

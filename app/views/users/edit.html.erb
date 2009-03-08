@@ -1,12 +1,15 @@
 <div class="standard_form">
-<% form_for(@user) do |f| %>
+<% form_for @user, :html => { :multipart => true } do |f| %>
 	<%= f.error_messages %>
 
-	<%= f.label :name, "Display name" %>
-	<%= f.text_field :name %>
+	<p><%= f.label :name, "Display name" %>
+	<%= f.text_field :name %></p>
 	
-	<%= f.label :email, "Email address" %>
-	<%= f.text_field :email %>
+	<p><%= f.label :email, "Email address" %>
+	<%= f.text_field :email %></p>
+	
+	<p><%= f.label :avatar, "Avatar" %>
+	<%= f.file_field :avatar %></p>
 
 	<%= f.submit "Update" %>
 
