@@ -101,10 +101,14 @@ div#title{
 	height: 100px;
 	width: 100px;
 	float: left;
-	margin-left: 50px;
-	margin-bottom: 50px;
+	margin: 25px;
 	background: pink;
-	padding: 2px;
+	padding: 5px;
+}
+
+.artist img{
+	height: 100px;
+	width: 100px;
 }
 
 /* Typography / Links */

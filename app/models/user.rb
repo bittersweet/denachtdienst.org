@@ -20,7 +20,9 @@ class User < ActiveRecord::Base
   
 
   has_many :tracks
-  has_attached_file :avatar
+  has_attached_file :avatar,
+                    :styles => {  :thumb => "100x100#",
+                                  :medium => "200x200>" }
   
   validates_presence_of :avatar_file_name, :message => "avatar"
   # validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
