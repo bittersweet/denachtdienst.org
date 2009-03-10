@@ -27,7 +27,7 @@ ol, ul {
 /* DND */
 
 body{
-	background: url(../images/bg.jpg) center top repeat-y #0d0d0f;
+	background: #fff;
     background-attachment: fixed;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 }
@@ -47,15 +47,17 @@ input{
 }
 
 #header h1{
-	padding-left: 4px;
-	margin-top: -3px;
+	padding-left: 8px;
+	margin-top: 10px;
 	float: left;
-	font-size: 4em;
+	width: 240px;
+	font-size: 2em;
 }
 
 #userinfo{
 	float: right;
 	padding: 15px;
+	width: 400px;
 }
 
 #notification {
@@ -66,24 +68,9 @@ input{
 	margin: 10px auto;
 }
 
-div#title{
-	padding-left: 20px;
-	color: #fff;
-	line-height: 1.3em;
-	height: 20px;
-	width: 200px;
-	position: absolute;
-	top: 100px;
-}
-
-#title h2{
-	font-size: 2em;
-	font-weight: normal;
-}
-
 #wrapper{
 	margin: 0 auto;
-	width: 420px;
+	width: 520px;
 }
 
 #footer{
@@ -93,9 +80,6 @@ div#title{
 	height: 160px;
 	width: 100%;
 	background: #8B8BB1;
-}
-
-#artists{
 }
 
 .artist{
@@ -138,6 +122,14 @@ h1.username{
 	margin-bottom: 20px;
 }
 
+.introductie{
+	width: 250px;
+	font-size: 2em;
+	margin-bottom: 35px;
+	line-height: 1.2em;
+	color: #FF8100;
+}
+
 /* Tracklisting */
 
 #tracklist{
@@ -157,6 +149,7 @@ h1.username{
 	text-align: right;
 	font-size: 0.7em;
 	float: right;
+	width: 100px;
 }
 
 .meta img{
@@ -165,6 +158,7 @@ h1.username{
 
 .informatie{
 	float: left;
+	width: 300px;
 }
 
 a.button{

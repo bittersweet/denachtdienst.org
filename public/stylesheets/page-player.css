@@ -9,11 +9,11 @@ ul.playlist li {
 position:relative;
 display: block;
 font-size: 1.15em;
-line-height: 1.6em;
+line-height: 2em;
 color: #666;
 padding: 0.25em 0.5em 0.25em 0.5em;
 border: none;
-background: #8B8;
+background: #BF3030;
 }
 
 ul.playlist li a {
@@ -25,7 +25,6 @@ font-size: 120%;
 outline: none;
 position: relative;
 z-index: 2;
-text-shadow: 0 0 0 #fff; /* stupid Safari "fat" font rendering tweak */
 }
 
 ul.playlist li.sm2_playing,
