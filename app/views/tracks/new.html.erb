@@ -1,5 +1,5 @@
 <div class="standard_form">
-	<%= error_messages :track, :header_message => "Failed!", :message => nil, :header_tag => :h1  %>
+	<%= error_messages_for :track, :header_message => "Failed!", :message => nil, :header_tag => :h1  %>
 	<% form_for @track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
 
 	<p><%= label_tag 'Naam van de track' %>
