@@ -213,3 +213,7 @@ a.button:hover{
 	border: 1px solid #888888;
 	padding: 5px;
 }
+
+.standard_form img{
+	margin-top: 10px;
+}
