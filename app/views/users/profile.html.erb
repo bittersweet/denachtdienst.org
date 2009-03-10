@@ -1,4 +1,5 @@
 <div class="standard_form">
+	<div style="float: right"><%= image_tag @user.avatar.url(:thumb) %></div>
 	<h1 class="username"><%=h @user.login %> </h1><%= link_to "(edit)", edit_profile_path %>
 	<p><strong>Name:</strong> <%=h @user.name %></p>
 	<p><strong>Username:</strong> <%=h @user.login %></p>
