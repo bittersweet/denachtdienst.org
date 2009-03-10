@@ -1,8 +1,5 @@
-<div id="title">
-	<h2><%= @user.name %></h2>
-</div>	
-
 <div id="wrapper">
+	<p class="introductie"><%= @user.name %></p>
 	<ul id="tracklist">
 	<% @track.each do |t| %>
 		<li><span class="informatie"><%= t.name %></span>

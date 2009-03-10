@@ -1,8 +1,5 @@
-<div id="title">
-	<h2><%= @user.name %></h2>
-</div>	
-
 <div id="wrapper">
+	<p class="introductie"><%= @user.name %></p>
 	<ul class="playlist">
 	<% @track.each do |t| %>
 		<li><%= link_to t.name, t.mp3.url %>

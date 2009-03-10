@@ -1,8 +1,10 @@
-<div id="title">
-	<h2>deNachtDienst</h2>
-</div>
+
 
 <div id="wrapper">
+	
+	<p class="introductie">We gaan hardt, met <strong>dt.</strong></p>
+	
+	
 	<ul class="playlist">
 	<% @track.each do |t| %>
 		<li><%= link_to t.name, t.mp3.url %>
