@@ -87,14 +87,15 @@ div#title{
 }
 
 #footer{
-	position: absolute;
-	bottom: 0;
+	margin-top: 50px;
+	margin-bottom: -85px;
+	clear: both;
+	height: 160px;
 	width: 100%;
 	background: #8B8BB1;
 }
 
 #artists{
-
 }
 
 .artist{
