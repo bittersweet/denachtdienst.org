@@ -9,9 +9,8 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
-    #checks to see if the page is cached, if not the query gets executed
-      @track = Track.find(:all)
-      @user = User.find(:all)
+      @track = Track.find(:all, :include => "user")
+      @user = @track.collect {|x| x.user}.uniq
   end
 
   def new
