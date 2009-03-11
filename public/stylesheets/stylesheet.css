@@ -54,7 +54,7 @@ p, input{
 #userinfo{
 	float: right;
 	padding: 15px;
-	width: 400px;
+	width: auto;
 }
 
 #notification {
