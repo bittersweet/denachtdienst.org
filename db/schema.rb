@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20090308121126) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
-    t.string   "permalink"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.string   "avatar_file_size"
