@@ -7,14 +7,12 @@ ActionController::Routing::Routes.draw do |map|
   map.profile '/users/profile', :controller => 'users', :action => 'profile'
   map.edit_profile '/users/profile/edit', :controller => 'users', :action => 'edit'
   map.rss '/tracks/rss', :controller => 'tracks', :action => 'rss'
+  map.userrss '/users/:id/rss', :controller => 'tracks', :action => 'userrss'
   map.resources :users, :has_many => :tracks
   map.resources :tracks
   map.resource :session
   map.status '/status', :controller => 'users', :action => 'status'
-  
-  # todo http://api.rubyonrails.org/classes/ActionController/Routing.html
-  # pretty urls
-  
+
   map.root :controller => 'tracks'
   # The priority is based upon order of creation: first created -> highest priority.
 

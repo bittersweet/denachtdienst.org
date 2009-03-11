@@ -68,4 +68,11 @@ class TracksController < ApplicationController
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end
   
+  def userrss
+    user = params[:id]
+    @track = Track.find(:all, :conditions => "user_id = #{user}")
+    render :layout => false
+    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+  end
+  
 end
