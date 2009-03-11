@@ -12,7 +12,7 @@ class UserSweeper < ActionController::Caching::Sweeper
   
   def clear_users_cache(user)
     expire_page :controller => :users, :action => :show, :id => user
-
+    expire_page "/index.html"
   end
   
 end
