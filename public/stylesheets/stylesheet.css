@@ -32,11 +32,8 @@ body{
 	font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-p{
+p, input{
 	margin-top: 10px;
-}
-input{
-	margin-top: 5px;
 }
 
 #header{
@@ -95,11 +92,6 @@ input{
 	background: #ccc;
 }
 
-.artist img{
-	height: 100px;
-	width: 100px;
-}
-
 /* Typography / Links */
 
 a{
@@ -108,7 +100,6 @@ a{
 }
 
 a:hover{
-/*	color: #fff;*/
 	color: #ccc;
 }
 
@@ -161,27 +152,6 @@ h1.username{
 	width: 300px;
 }
 
-a.button{
-	display: inline-block;
-	margin-right: 10px;
-	padding: 8px 20px 8px 16px;;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border: none;
-	font-size: 11px;
-	color: #ccc;
-	background: #333;
-	cursor: pointer;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-a.button:hover{
-	color: #000;
-	background-color: #ccc;
-}
-
 /* Form related styles */
 
 .standard_form{
@@ -210,4 +180,27 @@ a.button:hover{
 
 .standard_form img{
 	margin-top: 10px;
+}
+
+/* Button styles */
+
+a.button{
+	display: inline-block;
+	margin-right: 10px;
+	padding: 8px 20px 8px 16px;;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: none;
+	font-size: 11px;
+	color: #ccc;
+	background: #333;
+	cursor: pointer;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.button:hover{
+	color: #000;
+	background-color: #ccc;
 }
