@@ -6,7 +6,7 @@
 	<title>DND</title>
 	<%= stylesheet_link_merged :base %>
 	<%= javascript_include_merged :base %>
-	<%= auto_discovery_link_tag :rss, {:controller => "tracks", :action => "rss"} %>
+	<%= auto_discovery_link_tag :rss, {:controller => "tracks", :action => "rss"}, :title => "deNachtDienst Tracks RSS" %>
 	<%= yield :head %>
 </head> 
 <body> 
