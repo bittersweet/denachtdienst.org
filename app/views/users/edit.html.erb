@@ -1,12 +1,17 @@
 <div class="standard_form">
 <% form_for @user, :html => { :multipart => true } do |f| %>
-	<%= f.error_messages %>
+
+	<%= error_message_on "user", "name", :css_class => "formerror" %>
 
 	<p><%= f.label :name, "Display name" %>
 	<%= f.text_field :name %></p>
+
+	<%= error_message_on "user", "email", :css_class => "formerror" %>
 	
 	<p><%= f.label :email, "Email address" %>
 	<%= f.text_field :email %></p>
+
+	<%= error_message_on "user", "avatar", :css_class => "formerror" %>
 	
 	<p><%= f.label :avatar, "Avatar" %>
 	<%= image_tag @user.avatar.url(:thumb) %>	
