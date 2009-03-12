@@ -3,8 +3,8 @@ class Invitation < ActiveRecord::Base
   belongs_to :sender, :class_name => "User"
   has_one :recipient, :class_name => "User"
   
-  validates_presence_of :recipient_email
-  validate :recipient_is_not_registered
+  validates_presence_of :recipient_email, :message => "Je bent een e-mail adres vergeten in te voeren"
+  validate :recipient_is_not_registered, :message => "Dit e-mail adres is al geregistreerd"
   
   before_create :generate_token
   

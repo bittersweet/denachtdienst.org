@@ -1,6 +1,7 @@
 <div class="standard_form">
 <% form_for @invitation do |f| %>
-  <%= f.error_messages %>
+
+	<div class="formerror"><%= error_message_on "invitation", "recipient_email" %></div>
 
     <%= f.label :recipient_email %>
     <%= f.text_field :recipient_email %>
