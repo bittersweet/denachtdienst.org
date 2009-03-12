@@ -7,6 +7,9 @@ class AddFirstAdminUser < ActiveRecord::Migration
 		user.email = "admin@localhost"
 		user.password = "password"
 		user.password_confirmation = "password"
+		user.avatar_file_name = "null.jpg"
+		user.avatar_content_type = "image/jpeg"
+		user.avatar_file_size = "1"
     user.save(false)
 		role = Role.new
 		#Admin role name should be "admin" for convenience
