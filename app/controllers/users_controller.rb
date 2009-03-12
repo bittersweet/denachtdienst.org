@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-
-  require_role "admin", :for => :invite
-
+  
   protect_from_forgery :only => [:create, :update, :destroy] 
   
   caches_page :show

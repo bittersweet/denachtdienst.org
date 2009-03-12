@@ -1,4 +1,7 @@
 class InvitationsController < ApplicationController
+
+  require_role "admin"
+  
   def new
     @invitation = Invitation.new
   end
