@@ -2,7 +2,7 @@
 	<h1>Register</h1>
 	<% @user.password = @user.password_confirmation = nil %>
 
-	<% form_for :user, :html => { :multipart => true }, :url => users_path do |f| -%>
+	<% form_for :user, :html => { :multipart => true }, :url => users_path do |f| %>
 	<%= f.hidden_field :invitation_token %>
 
 	<%= error_message_on "user", "name", :css_class => "formerror" %>
@@ -36,5 +36,5 @@
 	<%= f.password_field :password_confirmation %></p>
 
 	<p><%= submit_tag 'Sign up' %></p>
-	<% end -%>
+	<% end %>
 </div>
