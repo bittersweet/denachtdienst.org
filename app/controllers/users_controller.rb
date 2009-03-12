@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  require_role "admin", :for => :invite
+
   protect_from_forgery :only => [:create, :update, :destroy] 
   
   caches_page :show
@@ -32,13 +34,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def update
-  #   @user = User.find(current_user.id)
-  #   
-  #   @user.avatar = params[:user][:avatar]
-  #   @user.save
-  # end
-
   def manage
     @track = Track.find(:all, :conditions => { :user_id => current_user.id})
     @user = User.find(current_user.id)
@@ -69,6 +64,10 @@ class UsersController < ApplicationController
       flash[:error]  = "Het ging niet helemaal goed..."
       render :action => 'new'
     end
+  end
+  
+  def invite
+    
   end
   
 end
