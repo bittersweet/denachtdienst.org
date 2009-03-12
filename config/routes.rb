@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => :tracks
   map.resources :tracks
   map.resource :session
+  map.resources :invitations
   map.status '/status', :controller => 'users', :action => 'status'
 
   map.root :controller => 'tracks'
