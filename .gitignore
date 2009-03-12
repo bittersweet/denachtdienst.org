@@ -5,3 +5,4 @@ public/cache/*
 public/tracks.html
 *_packaged.*
 public/system/*
+config/database.yml
