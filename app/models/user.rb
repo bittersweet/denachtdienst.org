@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   belongs_to :invitation
   
-  validates_presence_of :avatar_file_name, :message => "avatar"
+  validates_attachment_presence :avatar, :message => "Je moet een plaatje selecteren"
   # validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
   
   
