@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     (@_list.include?(role_in_question.to_s) )
   end
   # ---------------------------------------
-  
+
 
   has_many :tracks
   has_attached_file :avatar,
