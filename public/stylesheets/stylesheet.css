@@ -204,3 +204,8 @@ a.button:hover{
 	color: #000;
 	background-color: #ccc;
 }
+
+.formerror{
+	padding: 5px;
+	border: 2px solid red;
+}

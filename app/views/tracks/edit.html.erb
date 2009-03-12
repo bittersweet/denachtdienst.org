@@ -1,6 +1,7 @@
 <div class="standard_form">
 <% form_for(@track) do |f| %>
-	<%= f.error_messages %>
+
+	<div class="formerror"><%= error_message_on "track", "name" %></div>
 
 	<%= f.label :name, "Track name" %>
 	<%= f.text_field :name %>
