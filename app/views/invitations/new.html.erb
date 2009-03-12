@@ -1,11 +1,10 @@
+<div class="standard_form">
 <% form_for @invitation do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :recipient_email %><br />
+    <%= f.label :recipient_email %>
     <%= f.text_field :recipient_email %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
+
+	<p><%= f.submit "Submit" %></p>
 <% end %>
-
-
+</div>
