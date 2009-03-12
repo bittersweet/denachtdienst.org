@@ -206,6 +206,10 @@ a.button:hover{
 }
 
 .formerror{
-	padding: 5px;
-	border: 2px solid red;
+	margin-top: 15px;
+	padding: 15px;
+	background: #fff;
+	border: 1px solid #000;
+	font-weight: bold;
+	font-size: smaller;
 }
