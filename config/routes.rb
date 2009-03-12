@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.signup '/signup/:invitation_token', :controller => 'users', :action => 'new'
   map.manage '/users/manage', :controller => 'users', :action => 'manage'
   map.profile '/users/profile', :controller => 'users', :action => 'profile'
   map.edit_profile '/users/profile/edit', :controller => 'users', :action => 'edit'
