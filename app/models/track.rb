@@ -4,7 +4,7 @@ class Track < ActiveRecord::Base
   has_attached_file :mp3 
   
   validates_presence_of :name, :message => "Je moet wel een naam invoeren"
-  validates_presence_of :mp3_file_name, :message => "Je moet een mp3 bijvoegen"
+  validates_attachment_presence :mp3, :message => "Je moet een mp3 bijvoegen"
   validates_attachment_content_type :mp3, :content_type => ['audio/mpeg'], :message => "Je mag alleen mp3's uploaden"
   
 end
