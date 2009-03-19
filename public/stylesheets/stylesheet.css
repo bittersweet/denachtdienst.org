@@ -65,18 +65,34 @@ p, input{
 	margin: 10px auto;
 }
 
-#wrapper{
+#wrapper, #footer{
 	margin: 0 auto;
 	width: 520px;
 }
 
 #footer{
 	margin-top: 50px;
-	margin-bottom: -85px;
-	clear: both;
 	height: 160px;
-	width: 100%;
 	background: #8B8BB1;
+}
+
+#credits{
+	margin: 40px auto;
+	width: 560px;
+	padding: 10px 0 20px;
+	border-top: 1px solid rgb(231, 231, 231);
+	border-bottom: 1px solid rgb(231, 231, 231);
+	background: rgb(245, 245, 245);
+}
+
+#credits p{
+	margin-left: 55px;
+	font-size: 0.8em;
+	color: rgb(102, 102, 102);
+}
+
+#credits a{
+	font-size: 1.1em;
 }
 
 .artist{
