@@ -9,7 +9,7 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
-      @track = Track.find(:all, :include => "user")
+      @track = Track.find(:all, :include => "user", :order => "id DESC")
       @user = @track.collect {|x| x.user}.uniq
   end
 
