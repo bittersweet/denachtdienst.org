@@ -14,7 +14,7 @@ class InvitationsController < ApplicationController
       flash[:notice] = "Successfully created invitation."
       redirect_to root_path
     else
-      render :action => 'new'
+      render "new"
     end
   end
 end

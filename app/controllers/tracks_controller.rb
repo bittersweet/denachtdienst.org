@@ -28,7 +28,7 @@ class TracksController < ApplicationController
       flash[:notice] = "Track toevoeging gelukt"
       redirect_to :controller => "users", :action => "manage"
     else
-      render :action => 'new'
+      render "new"
     end
   end
   
@@ -51,7 +51,7 @@ class TracksController < ApplicationController
     if @track.update_attributes(params[:track])
       redirect_to track_path(params[:id])
     else
-      render :action => "edit" 
+      render "edit" 
     end
   end
   

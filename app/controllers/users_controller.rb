@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       redirect_to profile_users_path
     else
-      render :action => "edit" 
+      render "edit" 
     end
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
   
   def status
-    render :partial => 'users/status/'
+    render :partial => "status"
   end
 
   # render new.rhtml
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Je bent geregistreerd."
     else
       flash[:error]  = "Het ging niet helemaal goed..."
-      render :action => 'new'
+      render "new"
     end
   end
   
