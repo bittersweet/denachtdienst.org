@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'tracks'
 
   #rss feeds
-  map.rss '/tracks/rss', :controller => 'tracks', :action => 'rss'
+  map.rss '/rss', :controller => 'tracks', :action => 'rss'
   map.userrss '/users/:id/rss', :controller => 'tracks', :action => 'userrss'
 
   #logged in status
