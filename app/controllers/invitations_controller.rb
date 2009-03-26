@@ -11,7 +11,6 @@ class InvitationsController < ApplicationController
     @invitation.sender = current_user
     if @invitation.save
       Mailer.deliver_invitation(@invitation, signup_url(@invitation.token))
-      flash[:notice] = "Successfully created invitation."
       redirect_to root_path
     else
       render "new"
