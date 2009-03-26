@@ -18,7 +18,7 @@ role :db,  "213.163.66.221", :primary => true
 
 set :deploy_via, "remote_cache"
 
-desc "After updating code we need to populate a new database.yml"
+desc "Populate database.yml and package CSS/JS"
 task :after_update_code, :roles => :app do
   require "yaml"
   set :production_database_password, proc { Capistrano::CLI.password_prompt("Production database remote Password : ") }
@@ -36,17 +36,21 @@ task :after_update_code, :roles => :app do
   buffer['production']['host'] = "localhost"
   
   put YAML::dump(buffer), "#{release_path}/config/database.yml", :mode => 0664
+
+  #package css and js
+  run "cd #{release_path} && rake asset:packager:build_all"
+  
 end
 
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
-
-after :deploy, "passenger:restart"
 
 namespace :deploy do
-  %w(start restart).each { |name| task name, :roles => :app do passenger.restart end }
+  desc "Restarting Passenger with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+ 
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with Passenger"
+    task t, :roles => :app do ; end
+  end
 end
