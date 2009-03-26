@@ -215,3 +215,7 @@ ul.playlist.use-peak li.sm2_paused .peak {
 background-color: #888;
 border-color: #ccc;
 }
+
+#control-template {
+ display:none;
+}
