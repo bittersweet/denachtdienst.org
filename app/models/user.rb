@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   
   has_permalink :name, :update => true
   
+  def to_param
+    permalink
+  end
+   
   validates_attachment_presence :avatar, :message => "Je moet een plaatje selecteren"
   # validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
   

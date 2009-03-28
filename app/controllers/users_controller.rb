@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [ :edit, :update, :manage, :profile ]  
   
   def show
-    @track = Track.find(:all, :conditions => { :user_id => params[:id]})
-    @user = User.find(params[:id])
+    @user = User.find_by_permalink(params[:id])
+    @track = Track.find(:all, :conditions => { :user_id => @user.id})
   end
   
   def profile
