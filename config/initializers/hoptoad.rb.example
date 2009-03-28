@@ -1,0 +1,4 @@
+# Example hoptoad config
+HoptoadNotifier.configure do |config|
+  config.api_key = '5e7e304125afa2671c4393fa18586bbd'
+end

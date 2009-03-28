@@ -6,3 +6,4 @@ public/tracks.html
 *_packaged.*
 public/system/*
 config/database.yml
+config/initializers/hoptoad.rb
