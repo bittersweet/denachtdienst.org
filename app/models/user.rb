@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   belongs_to :invitation
   
+  has_permalink :name, :update => true
+  
   validates_attachment_presence :avatar, :message => "Je moet een plaatje selecteren"
   # validates_attachment_content_type :avatar, :content_type => [''], :message => "Je mag alleen plaatjes uploaden"
   
