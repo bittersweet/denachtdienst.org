@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090312141740) do
+ActiveRecord::Schema.define(:version => 20090328142203) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "sender_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20090312141740) do
     t.string   "avatar_content_type"
     t.string   "avatar_file_size"
     t.integer  "invitation_id"
+    t.string   "permalink"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
