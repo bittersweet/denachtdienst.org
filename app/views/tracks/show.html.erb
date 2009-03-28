@@ -1,3 +1,5 @@
+<%= content_for :title, @track.name %>
+
 <div id="wrapper">
 	<ul class="playlist">
 		<li><%= link_to @track.name, @track.mp3.url %>
