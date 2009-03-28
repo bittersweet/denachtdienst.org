@@ -132,6 +132,7 @@ h1.username{
 .introductie{
 	width: 250px;
 	font-size: 2em;
+	font-weight: normal;
 	margin-bottom: 35px;
 	line-height: 1.2em;
 	color: #FF8100;
