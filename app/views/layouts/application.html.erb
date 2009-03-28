@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>DND</title>
+	<title>DND - <%= yield(:title) %></title>
 	<%= stylesheet_link_merged :base %>
 	<%= javascript_include_merged :base %>
 	<%= auto_discovery_link_tag :rss, {:controller => "tracks", :action => "rss"}, :title => "deNachtDienst Tracks RSS" %>
