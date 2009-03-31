@@ -3,11 +3,11 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.signup '/signup/:invitation_token', :controller => 'users', :action => 'new'
   map.edit_profile '/users/profile/edit', :controller => 'users', :action => 'edit'
+  map.change_password '/change_password', :controller => 'passwords', :action => 'index'
   map.resources :users, :has_many => :tracks, :collection => { :profile => :get, :manage => :get }
   map.resources :tracks
   map.resource :session
   map.resources :invitations
-
   map.root :controller => 'tracks'
 
   #rss feeds
