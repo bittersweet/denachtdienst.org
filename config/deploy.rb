@@ -17,7 +17,7 @@ role :db,  application, :primary => true
 
 namespace :deploy do	
 
-  after "deploy:update_code", "deploy:link_production_db", "deploy:link_hoptoad_config", "deploy:package_assets"
+  after "deploy:update_code", "deploy:link_production_db", "deploy:link_hoptoad_config", "deploy:link_app_config", "deploy:package_assets"
 
   desc "Link in the production database.yml"
   task :link_production_db do
@@ -27,6 +27,11 @@ namespace :deploy do
   desc "Link the hoptoad initializer file"
   task :link_hoptoad_config do
     run "ln -nfs #{deploy_to}/shared/config/initializers/hoptoad.rb #{release_path}/config/initializers/hoptoad.rb"
+  end
+  
+  desc "Link the app_config file"
+  task :link_app_config do
+    run "ln -nfs #{deploy_to}/shared/config/app_config.yml #{release_path}/config/app_config.yml"
   end
   
   desc "Package CSS and JS files"
