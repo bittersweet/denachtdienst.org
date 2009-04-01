@@ -26,6 +26,7 @@ class TracksController < ApplicationController
     @track.user_id = @user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
+      twitter_update("user", "pass", "[DND] Nieuwe track: " + @track.name)
       redirect_to :controller => "users", :action => "manage"
     else
       render "new"
@@ -74,5 +75,10 @@ class TracksController < ApplicationController
     render :layout => false
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end
-  
+
+  # posts the message to twitter
+  def twitter_update(user, password, message)
+    Twitter::Base.new(user, password).update(message)
+  end
+
 end
