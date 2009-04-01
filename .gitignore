@@ -7,3 +7,4 @@ public/tracks.html
 public/system/*
 config/database.yml
 config/initializers/hoptoad.rb
+config/app_config.yml
