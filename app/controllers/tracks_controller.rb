@@ -26,7 +26,7 @@ class TracksController < ApplicationController
     @track.user_id = @user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
-      twitter_update("[DND] Nieuwe track: " + @track.name)
+      twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
       redirect_to :controller => "users", :action => "manage"
     else
       render "new"
