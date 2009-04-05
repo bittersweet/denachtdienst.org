@@ -70,8 +70,8 @@ class TracksController < ApplicationController
   end
   
   def userrss
-    user = params[:id]
-    @track = Track.find(:all, :conditions => "user_id = #{user}")
+    @user = User.find_by_permalink(params[:id])
+    @track = Track.find(:all, :conditions => "user_id = #{@user.id}")
     render :layout => false
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end
