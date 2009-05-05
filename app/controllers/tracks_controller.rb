@@ -18,15 +18,22 @@ class TracksController < ApplicationController
   end
 
   def create
+    
+    if current_user.nil?
+      @loggedinuser = "1"
+    else
+      @loggedinuser = current_user.id
+    end
+    
     #  @user = User.find(params[:user_id])
-    @user = current_user
+    # @user = @loggedinuser
     @track = Track.new
     @track.name = params[:track][:name]
     @track.mp3 = params[:track][:mp3]
-    @track.user_id = @user.id
+    @track.user_id = @loggedinuser.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
-      twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
+      # twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
       redirect_to :controller => "users", :action => "manage"
     else
       render "new"
