@@ -1,0 +1,11 @@
+Feature: List Tracks
+  In order to see all the tracks
+  As a user
+  I want to list tracks
+  
+  Scenario: Tracks List
+    Given I have tracks titled Test track 1, Test track 2
+    When I go to the list of tracks
+    Then I should see "Test track 1"
+    And I should see "Test track 2"
+     

@@ -8,6 +8,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     
+    when /the list of tracks/
+      root_path
+    
     when /the homepage/
       '/'
     
