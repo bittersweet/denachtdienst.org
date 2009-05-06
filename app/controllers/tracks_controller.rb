@@ -18,17 +18,10 @@ class TracksController < ApplicationController
   end
 
   def create
-    
-    if current_user.nil?
-      @loggedinuser = "1"
-    else
-      @loggedinuser = current_user.id
-    end
-
     @track = Track.new
     @track.name = params[:track][:name]
     @track.mp3 = params[:track][:mp3]
-    @track.user_id = @loggedinuser
+    @track.user_id = current_user.id
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
       # twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")

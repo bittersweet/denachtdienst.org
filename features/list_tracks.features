@@ -4,6 +4,7 @@ Feature: List Tracks
   I want to list tracks
   
   Scenario: Tracks upload and list
+    Given I am logged in as an Admin
     Given I have tracks titled Test track 1, Test track 2
     When I go to the list of tracks
     Then I should see "Test track 1"
