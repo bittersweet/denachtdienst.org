@@ -10,6 +10,9 @@ module NavigationHelpers
     
     when /the list of tracks/
       root_path
+      
+    when /the profile page/
+      profile_users_path
     
     when /the homepage/
       '/'
