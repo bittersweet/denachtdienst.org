@@ -9,8 +9,8 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
-      @track = Track.find(:all, :include => "user", :order => "id DESC")
-      @user = @track.collect {|x| x.user}.uniq
+      @track = Track.find(:all, :order => "id DESC")
+      @user = User.all
   end
 
   def new
@@ -24,13 +24,11 @@ class TracksController < ApplicationController
     else
       @loggedinuser = current_user.id
     end
-    
-    #  @user = User.find(params[:user_id])
-    # @user = @loggedinuser
+
     @track = Track.new
     @track.name = params[:track][:name]
     @track.mp3 = params[:track][:mp3]
-    @track.user_id = @loggedinuser.id
+    @track.user_id = @loggedinuser
     if @track.save
       flash[:notice] = "Track toevoeging gelukt"
       # twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
