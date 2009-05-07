@@ -1,86 +1,85 @@
 .spectrum-container {
- display:none;
+display: none;
 }
 
 ul.use-spectrum li.sm2_playing .spectrum-container {
- position:absolute;
- left:0px;
- top:0px;
- margin-left:-266px;
- margin-top:-1px;
- display:block;
- background-color:#5588bb;
- border:1px solid #99ccff;
- -moz-border-radius:4px;
- -webkit-border-radius:4px;
- border-radius:4px;
+position: absolute;
+left: 0px;
+top: 0px;
+margin-left: -266px;
+margin-top: -1px;
+display: block;
+background-color: #5588bb;
+border: 1px solid #99ccff;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
 }
 
 ul.use-spectrum .spectrum-box {
- position:relative;
- width:255px;
- font-size:4em;
- padding:2px 0px;
- height:1.2em;
- overflow:hidden;
+position: relative;
+width: 255px;
+font-size: 4em;
+padding: 2px 0px;
+height: 1.2em;
+overflow: hidden;
 }
 
 ul.use-spectrum .spectrum-box .spectrum {
- position:absolute;
- left:0px;
- top:-2px;
- margin-top:20px;
- display:block;
- font-size:20px;
- width:1px;
- height:0px; /* set to 50px for a thick line, 1px for a thin line, etc. */
+position: absolute;
+left: 0px;
+top: -2px;
+margin-top: 20px;
+display: block;
+font-size: 20px;
+width: 1px;
+height: 0px; /* set to 50px for a thick line, 1px for a thin line, etc. */
  overflow:hidden;
- background-color:#fff;
+background-color: #fff;
 }
 
 ul.playlist {
- list-style-type:none;
- margin:0px;
- padding:0px;
-
+list-style-type: none;
+margin: 0px;
+padding: 0px;
 }
 
 ul.playlist li {
  /* assume all items will be sounds rather than wait for onload etc. in this example.. may differ for your uses. */
  position:relative;
- display:block;
- width:auto;
- font-size: 18px;
- color:#666;
+display: block;
+width: auto;
+font-size: 18px;
+color: #666;
 /* padding:0.25em 0 0.25em 0em;*/
  border-bottom: 1px solid #cacaca;
- letter-spacing:0px; /* ZOMG WEB X.0. ;) */
+letter-spacing: 0px; /* ZOMG WEB X.0. ;) */
  background-color:#fff;
- -webkit-transition-property: hover;
- -webkit-transition: background-color 0.15s ease-in-out;
+-webkit-transition-property: hover;
+-webkit-transition: background-color 0.15s ease-in-out;
 }
 
 ul.playlist li a {
- margin-left: 22px;
- display:block;
- text-decoration:none;
- font-weight:normal;
- color:#000;
- font-size:20px;
- line-height: 2.5em;
- outline:none;
- position:relative;
- z-index:2;
- text-shadow: 0 0 0 #fff; /* stupid Safari "fat" font rendering tweak */
+margin-left: 22px;
+display: block;
+text-decoration: none;
+font-weight: normal;
+color: #000;
+font-size: 20px;
+line-height: 2.5em;
+outline: none;
+position: relative;
+z-index: 2;
+text-shadow: 0 0 0 #fff; /* stupid Safari "fat" font rendering tweak */
 }
 
 ul.playlist li.sm2_playing,
 ul.playlist li.sm2_paused,
 ul.playlist li.sm2_playing a {
- color:#000;
+color: #000;
 /* border-radius:3px;
- -webkit-border-radius:3px;
- -moz-border-radius:3px;*/
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;*/
 }
 
 ul.playlist li:hover {
@@ -88,62 +87,62 @@ ul.playlist li:hover {
 }
 
 ul.playlist li:hover a {
- color:#333;
+color: #333;
 }
 
 ul.playlist li.sm2_playing,
 ul.playlist li.sm2_playing:hover {
- background-color:#eee;
+background-color: #eee;
 }
 
 ul.playlist li.sm2_paused {
- background-color:#f0f0f0;
+background-color: #f0f0f0;
 }
 
 ul.playlist li.sm2_playing a.sm2_link,
 ul.playlist li.sm2_paused a.sm2_link {
- margin-right:4.5em; /* room for timing stuff */
+margin-right: 4.5em; /* room for timing stuff */
 }
 
 ul.playlist li .timing {
- position:absolute;
- display:none;
- text-align:right;
- right:1em;
- top: 4px;
- width:auto;
- height:1em;
- padding:3px 5px;
- letter-spacing:0px;
- font:30px Arial,courier,system;
- color: #555;
- line-height:1em;
- vertical-align:middle;
+position: absolute;
+display: none;
+text-align: right;
+right: 1em;
+top: 4px;
+width: auto;
+height: 1em;
+padding: 3px 5px;
+letter-spacing: 0px;
+font: 30px Arial,courier,system;
+color: #555;
+line-height: 1em;
+vertical-align: middle;
 }
 
 ul.playlist.use-peak li .timing {
- right:4.25em;
+right: 4.25em;
 }
 
 ul.playlist li:hover .timing {
- z-index:2;
+z-index: 2;
 }
 
 ul.playlist li .timing div.sm2_timing {
- margin:0px;
- padding:0px;
- margin-top:-1em;
- text-shadow: 0 0 0 #fff; /* stupid Safari "fat" font rendering tweak */
+margin: 0px;
+padding: 0px;
+margin-top: -1em;
+text-shadow: 0 0 0 #fff; /* stupid Safari "fat" font rendering tweak */
 }
 
 ul.playlist li.sm2_playing .timing,
 ul.playlist li.sm2_paused .timing {
- display:block;
+display: block;
 color: green;
 }
 
 ul.playlist li.sm2_paused .timing .sm2_position {
- text-decoration:blink; /* hee hee. first actual appropriate use? :D */
+text-decoration: blink; /* hee hee. first actual appropriate use? :D */
 }
 
 ul.playlist li.sm2_paused .timing,
