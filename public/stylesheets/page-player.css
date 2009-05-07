@@ -139,6 +139,7 @@ ul.playlist li .timing div.sm2_timing {
 ul.playlist li.sm2_playing .timing,
 ul.playlist li.sm2_paused .timing {
  display:block;
+color: green;
 }
 
 ul.playlist li.sm2_paused .timing .sm2_position {
@@ -149,5 +150,6 @@ ul.playlist li.sm2_paused .timing,
 ul.playlist.use-peak li.sm2_paused .peak {
 /* background-color:#888;*/
  border-color:#ccc;
+color: red;
 }
 
