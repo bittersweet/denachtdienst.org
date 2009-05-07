@@ -47,8 +47,13 @@ p, input{
 	margin-left: 30px;
 	margin-top: 10px;
 	float: left;
-	width: 240px;
+	width: 300px;
 	font-size: 2em;
+}
+
+#header h1 span{
+	margin-left: 1px;
+	color: #cacaca;
 }
 
 #userinfo{
