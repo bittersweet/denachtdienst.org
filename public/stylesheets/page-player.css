@@ -93,14 +93,12 @@ ul.playlist li:hover a {
 
 ul.playlist li.sm2_playing,
 ul.playlist li.sm2_playing:hover {
-/* background-color:#eee;*/
+ background-color:#eee;
 }
 
 ul.playlist li.sm2_paused {
  background-color:#f0f0f0;
 }
-
-
 
 ul.playlist li.sm2_playing a.sm2_link,
 ul.playlist li.sm2_paused a.sm2_link {
