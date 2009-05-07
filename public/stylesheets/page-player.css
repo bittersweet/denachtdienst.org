@@ -113,14 +113,14 @@ position: absolute;
 display: none;
 text-align: right;
 right: 1em;
-top: 4px;
+top: 0px;
 width: auto;
 height: 1em;
-padding: 3px 5px;
+padding-right :5px;
 letter-spacing: 0px;
-font: 30px Arial,courier,system;
+font: 20px Arial,courier,system;
 color: #555;
-line-height: 1em;
+line-height: 2.5em;
 vertical-align: middle;
 }
 
