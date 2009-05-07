@@ -2,10 +2,11 @@
 
 <div id="wrapper">
 	
-	<h1 class="introductie">We gaan hardt, met <strong>dt.</strong></h1>
+  <!-- <h1 class="introductie">We gaan hardt, met <strong>dt.</strong></h1> -->
 	
 	
 	<ul class="playlist">
+	  <li id="intro">Nightshift baby!</li>
 	<% @track.each do |t| %>
 		<li><%= link_to t.name, t.mp3.url %>
 		</li>
