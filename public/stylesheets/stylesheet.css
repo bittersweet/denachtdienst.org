@@ -159,33 +159,10 @@ h1.username{
 
 /* Tracklisting */
 
-#tracklist{
-	font-family: Georgia, serif;
-	font-size: 1.2em;
-	line-height: 1.2em;
-}
-
 #tracklist li{
-	width: 100%;
-	height: 20px;
-/*	background: #fcc;*/
-	padding: 20px;
-}
-
-.meta{
-	text-align: right;
-	font-size: 0.7em;
-	float: right;
-	width: 100px;
-}
-
-.meta img{
-	padding: 2px;
-}
-
-.informatie{
-	float: left;
-	width: 300px;
+	font-family: Georgia, serif;
+	line-height: 2.5em;
+	padding-left: 22px;
 }
 
 /* Form related styles */
