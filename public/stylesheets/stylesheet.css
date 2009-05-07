@@ -163,6 +163,7 @@ h1.username{
 	font-family: Georgia, serif;
 	line-height: 2.5em;
 	padding-left: 22px;
+	border-bottom: 1px solid #cacaca;
 }
 
 /* Form related styles */
