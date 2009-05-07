@@ -1,9 +1,18 @@
 <div id="footer">
 	
 	<div id="artists">
-		<% @user.each do |u| %>		
-			<div class="artist"><%= link_to image_tag(u.avatar.url(:thumb), :alt => u.name), u %></div>
-		<% end %>
+	  
+	  
+	  <% @user.each do |u| %>
+	  
+	  <% if ! u.tracks.empty? %>
+	  
+		  <div class="artist"><%= link_to image_tag(u.avatar.url(:thumb), :alt => u.name), u %></div>
+	  
+	  <% end %>
+	  
+	  <% end %>
+
 	</div>
 
 </div>
