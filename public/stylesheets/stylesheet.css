@@ -43,7 +43,7 @@ p, input{
 }
 
 #header h1{
-	margin-left: 30px;
+	margin-left: 22px;
 	margin-top: 10px;
 	float: left;
 	width: 300px;
@@ -62,6 +62,7 @@ li#intro{
 	display: block;
 	font-size: 22px;
 	line-height: 2.5em;
+	border-bottom: 3px solid #cacaca;
 }
 
 #userinfo{
