@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20090508181658) do
     t.string   "mp3_file_name"
     t.string   "mp3_content_type"
     t.string   "mp3_file_size"
-    t.integer  "playcount"
+    t.integer  "playcount",        :default => 0
   end
 
   create_table "users", :force => true do |t|
