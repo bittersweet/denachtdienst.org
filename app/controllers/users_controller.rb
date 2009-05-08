@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     if User.exists?(:permalink => params[:id])
       @user = User.find_by_permalink(params[:id])
-      @track = Track.find(:all, :conditions => { :user_id => @user.id})
+      @track = Track.find(:all, :order => "id DESC", :conditions => { :user_id => @user.id})
     else
       rescue_404
     end
