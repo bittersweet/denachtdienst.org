@@ -62,14 +62,14 @@ class TracksController < ApplicationController
   end
   
   def rss
-    @track = Track.find(:all, :order => "id DESC", :limit => "30")
+    @track = Track.all.reverse[0..30]
     render :layout => false
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end
   
   def userrss
     @user = User.find_by_permalink(params[:id])
-    @track = Track.find(:all, :conditions => "user_id = #{@user.id}")
+    @track = @user.tracks.reverse
     render :layout => false
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end
