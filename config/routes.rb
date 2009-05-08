@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.change_password '/change_password', :controller => 'passwords', :action => 'index'
   map.resources :users, :has_many => :tracks, :collection => { :profile => :get, :manage => :get }
   map.resources :tracks
+  map.playcount '/tracks/:id/playcount', :controller => 'tracks', :action => 'raise_playcount'
   map.resource :session
   map.resources :invitations
   map.root :controller => 'tracks'

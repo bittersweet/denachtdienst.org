@@ -80,5 +80,16 @@ class TracksController < ApplicationController
       Twitter::Base.new(AppConfig.twitter.user, AppConfig.twitter.password).update(message)
     end
   end
+  
+  # ups the playcount by one
+  def raise_playcount
+    Track.update_counters 21, :playcount => 1
+    
+    respond_to do |format|
+      format.html  { redirect_to root_path }
+      format.js
+    end
+    
+  end
 
 end
