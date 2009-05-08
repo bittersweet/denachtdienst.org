@@ -3,17 +3,6 @@
 <div id="wrapper">
 	
   <!-- <h1 class="introductie">We gaan hardt, met <strong>dt.</strong></h1> -->
-	
-	<script>
-	
-  $(document).ready(function() {
-    $(".playlist li").one("click", function() {
-      var id = jQuery(this).attr("id");
-      $.post("/tracks/" + id + "/playcount");
-    });
-  });
-	
-	</script>
 		
 	<ul class="playlist">
 	  <li id="intro">Nightshift baby!</li>

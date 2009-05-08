@@ -14,6 +14,16 @@
 
 */
 
+function raise_playcount(){
+
+	// Get id of the track that is currently playing
+	var id = $(".sm2_playing").attr("id");
+
+	// Post to this location to update the playcount
+	$.post("/tracks/" + id + "/playcount");
+	
+}
+
 function PagePlayer(oConfigOverride) {
   var self = this;
   var pl = this;
@@ -215,6 +225,12 @@ function PagePlayer(oConfigOverride) {
     }
   }
 
+	//   this.consoleTest = function(payload) {
+	// 
+	// return false;
+	// 
+	//   }
+
   this.events = {
 
     // handlers for sound events as they're started/stopped/played
@@ -224,6 +240,8 @@ function PagePlayer(oConfigOverride) {
       this._data.className = pl.css.sPlaying;
       pl.addClass(this._data.oLI,this._data.className);
       self.setPageTitle(this._data.originalTitle);
+	  raise_playcount(this._data.oLI);
+
     },
 
     stop: function() {
