@@ -6,13 +6,11 @@
 	
 	<script>
 	
-  jQuery(document).ready(function() {
-    
-    jQuery(".playlist li").click(function() {
+  $(document).ready(function() {
+    $(".playlist li").one("click", function() {
       var id = jQuery(this).attr("id");
-      jQuery.post("/tracks/" + id + "/playcount");
-    });    
-    
+      $.post("/tracks/" + id + "/playcount");
+    });
   });
 	
 	</script>
