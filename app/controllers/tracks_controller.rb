@@ -9,7 +9,7 @@ class TracksController < ApplicationController
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
-      @track = Track.find(:all, :order => "id DESC")
+      @track = Track.all.reverse
       @user = User.all
   end
 
