@@ -1,7 +1,8 @@
 --- 
 javascripts: 
 - base: 
-  - prototype
+  - jquery
+  # - jrails
   - soundmanager2
   - page-player
 stylesheets: 
