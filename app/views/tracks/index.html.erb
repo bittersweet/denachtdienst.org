@@ -17,3 +17,6 @@
 <%= render "/tracks/pageplayer" %>
 
 <%= render "/layouts/footer" %>
+
+
+<%= link_to_remote "update playcount", :url => { :action => "raise_playcount", :id => 21} %>

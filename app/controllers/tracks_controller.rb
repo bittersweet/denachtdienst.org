@@ -84,13 +84,11 @@ class TracksController < ApplicationController
   # ups the playcount by one
   def raise_playcount
     Track.update_counters params[:id], :playcount => 1
-
-    # render :layout => false
-
-    respond_to do |format|
-      format.html  { redirect_to root_path }
-      format.js
-    end
+    
+    head :created, :location => track_path(21)
+    #returns 201 Created [/tracks/:id/playcount]
+    
+    # render :nothing => true
     
   end
 
