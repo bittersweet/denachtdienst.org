@@ -2,12 +2,14 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>DND - <%= yield(:title) %></title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="music, hiphop, Dutch, zeeuwse rap, denachtdienst, de nachtdienst, nightshift" />	
+	<meta name="description" content="<%= yield(:meta) %>" />
 	<%= stylesheet_link_merged :base %>
 	<%= javascript_include_merged :base %>
 	<%= auto_discovery_link_tag :rss, {:controller => "tracks", :action => "rss"}, :title => "deNachtDienst Tracks RSS" %>
-	<%= yield :head %>
+	<%= yield(:head) %>
 </head> 
 <body> 
 

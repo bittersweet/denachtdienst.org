@@ -1,16 +1,16 @@
-<%= content_for :title, "All tracks" %>
+<% content_for :title, "All tracks" %>
+<% content_for :meta, "Website van de Nachtdienst, een vriendengroep die veel bezig is met muziek" %>
 
 <div id="wrapper">
-	
-  <!-- <h1 class="introductie">We gaan hardt, met <strong>dt.</strong></h1> -->
-		
+
 	<ul class="playlist">
 	  <li id="intro">Nightshift baby!</li>
 	<% @track.each do |t| %>
 		<li id="<%= t.id %>"><%= link_to t.name, t.mp3.url %>
 		</li>
 	<% end %>
-	</ul>	
+	</ul>
+
 </div>
 
 <%= render "/tracks/pageplayer" %>
