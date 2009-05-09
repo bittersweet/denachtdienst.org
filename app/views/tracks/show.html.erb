@@ -2,7 +2,7 @@
 
 <div id="wrapper">
 	<ul class="playlist">
-		<li><%= link_to @track.name, @track.mp3.url %>
+		<li id="track-<%= @track.id %>"><%= link_to @track.name, @track.mp3.url %>
 		</li>
 	</ul>
 </div>
