@@ -6,7 +6,7 @@
 	<ul class="playlist">
 	  <li id="intro">Nightshift baby!</li>
 	<% @track.each do |t| %>
-		<li id="<%= t.id %>"><%= link_to(h(t.name), t.mp3.url) %>
+		<li id="track-<%= t.id %>"><%= link_to(h(t.name), t.mp3.url) %>
 		</li>
 	<% end %>
 	</ul>

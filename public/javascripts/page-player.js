@@ -17,10 +17,12 @@
 function raise_playcount(){
 
 	// Get id of the track that is currently playing
-	var id = $(".sm2_playing").attr("id");
-
+	var id = $(".sm2_playing").attr("id");	
+	var trackid = new Array();
+	// Split track-## at the -
+	trackid = id.split("-");
 	// Post to this location to update the playcount
-	$.post("/tracks/" + id + "/playcount");
+	$.post("/tracks/" + trackid[1] + "/playcount");
 	
 }
 
