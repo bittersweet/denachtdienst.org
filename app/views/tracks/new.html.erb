@@ -13,6 +13,8 @@
 	
 	<p><%= label_tag 'Bestand' %>
 	<%= f.file_field :mp3 %></p>
+	
+	<%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %>
 
 	<p><%= submit_tag 'submit' %></p>
 	<% end -%>
