@@ -77,7 +77,8 @@ var Upload = {
 	upload_progress: function(file, bytes, total)
 	{
 		percent = Math.ceil((bytes / total) * 100);
-		$('#' + file.id + ' div.progress div').width(percent + '%');
+		// $('#' + file.id + ' div.progress div').width(percent + '%');
+		$('div.progress div').width(percent + '%');
 	},
 	
 	/* 
@@ -133,6 +134,7 @@ var Upload = {
 				.text('Upload 0 Files');
 		}
 		console.log("upload complete");
+		
 		// Start Next Upload
 		swfu.startUpload();
 	},

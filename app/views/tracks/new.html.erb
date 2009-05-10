@@ -13,7 +13,7 @@
 			upload_url: "/tracks/create",
 			flash_url: "/flash/swfupload.swf",
       post_params : {
-      		"name" : "test",
+      		"name" : '$("#")',
       		"user_id" : "<%= current_user.id %>"
       	},
       file_params : {
@@ -34,6 +34,8 @@
 			debug: true // Set to true to find out why things aren't working
 		};
 		
+		Upload
+		
 		swfu = new SWFUpload(settings);
 		
 		// Disable Upload Button
@@ -48,6 +50,10 @@
 <div class="buttons">
 	<button id="browse" class="browse">Browse</button>
 	<button id="upload" class="upload">Upload 0 Files</button>
+</div>
+
+<div class="progress">
+  <div></div>
 </div>
 
 <div class="standard_form">

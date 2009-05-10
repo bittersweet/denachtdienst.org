@@ -227,3 +227,18 @@ a.button:hover{
 	font-weight: bold;
 	font-size: smaller;
 }
+
+div.progress
+{
+	border: 1px solid #C2E3EF;
+	text-align: left;
+	height: 6px;
+	width: 98px;
+}
+
+div.progress div
+{
+	background: #7BB963;
+	height: 6px;
+	width: 0;
+}
