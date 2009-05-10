@@ -93,7 +93,7 @@ var Upload = {
 	upload_error: function(file, code, message)
 	{
 		// Just a test error message
-		alert('MASSIVE ERROR!!!1');
+		console.log('MASSIVE ERROR!!!1');
 	},
 	
 	/* 
@@ -109,6 +109,7 @@ var Upload = {
 	upload_success: function(file, data)
 	{
 		$('#' + file.id).html($(data).html());
+		console.log("upload succes je weet zelf");
 	},
 
 	/* 
@@ -131,7 +132,7 @@ var Upload = {
 				.attr('disabled', 'true')
 				.text('Upload 0 Files');
 		}
-		
+		console.log("upload complete");
 		// Start Next Upload
 		swfu.startUpload();
 	},

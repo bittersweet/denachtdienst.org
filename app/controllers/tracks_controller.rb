@@ -5,8 +5,11 @@ class TracksController < ApplicationController
   cache_sweeper :track_sweeper,
                 :only => [:create, :update, :destroy]
 
+  protect_from_forgery :only => [:destroy] 
+
+
   #Only need to login if you want to create a new track
-  before_filter :login_required, :only => [ :new, :destroy ]
+  # before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
       @track = Track.all.reverse
@@ -16,15 +19,26 @@ class TracksController < ApplicationController
   def new
     @track = Track.new
   end
-
+  
   def create
-    @track = Track.new(params[:track])
-    if @track.save
-      flash[:notice] = "Track toevoeging gelukt"
-      twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
-      redirect_to :controller => "users", :action => "manage"
+    if params[:Filedata]
+      @user = current_user
+      @track = Track.new(:swfupload_file => params[:Filedata], :name => params[:name], :user_id => params[:user_id])
+
+      if @track.save
+        render :nothing => true
+      else
+        render :text => "error"
+      end
     else
-      render "new"
+      @track = Track.new(params[:track])
+      if @track.save
+        flash[:notice] = "Track toevoeging gelukt"
+        twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
+        redirect_to :controller => "users", :action => "manage"
+      else
+        render "new"
+      end
     end
   end
   

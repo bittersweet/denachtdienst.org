@@ -1,21 +1,73 @@
 <%= content_for :title, "Add track" %>
 
+
+<%= javascript_include_tag 'swfupload' %>
+<%= javascript_include_tag 'upload' %>
+<script type="text/javascript">
+	var swfu;
+	
+	// Dom Ready
+	$(document).ready(function() {
+		// Setup SWFU object
+		var settings = {
+			upload_url: "/tracks/create",
+			flash_url: "/flash/swfupload.swf",
+      post_params : {
+      		"name" : "test",
+      		"user_id" : "<%= current_user.id %>"
+      	},
+      file_params : {
+        'name' : 'test'
+      },
+			file_size_limit: "<%= 3.megabytes %>",
+			file_types: "*.mp3;",
+			file_types_description: "Mp3 Audio Files",
+
+			file_queued_handler: Upload.file_queued,
+			file_dialog_complete_handler: Upload.file_dialog_complete,
+			upload_start_handler: Upload.upload_start,
+			upload_progress_handler: Upload.upload_progress,
+			upload_error_handler: Upload.upload_error,
+			upload_success_handler: Upload.upload_success,
+			upload_complete_handler: Upload.upload_complete,
+
+			debug: true // Set to true to find out why things aren't working
+		};
+		
+		swfu = new SWFUpload(settings);
+		
+		// Disable Upload Button
+		$('#upload').addClass('disabled').attr('disabled', 'true');
+		
+		// Add Event Handlers
+		$('#browse').click(function() { swfu.selectFiles(); });
+		$('#upload').click(function() { swfu.startUpload(); });
+	});
+</script>
+
+<div class="buttons">
+	<button id="browse" class="browse">Browse</button>
+	<button id="upload" class="upload">Upload 0 Files</button>
+</div>
+
 <div class="standard_form">
+  
+<%= error_messages_for :track %>
+<% form_for :track, :url => { :action => "create" }, :method => :post, :html => { :multipart => true } do |f| %>
+	<fieldset>
+		<div class="message">
+			Only jpg files are allowed.
+		</div>
+		<ol>
+			<li>
+				<label for="photo_file">Photo File</label>
+				<%= f.file_field :file %>
+			</li>
+		</ol>
+	</fieldset>
+	<div class="buttons">
+		<%= f.submit 'Upload Image', :class => 'button upload' %>
+	</div>
+<% end %>
 
-	<% form_for @track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
-
-	<%= error_message_on "track", "name", :css_class => "formerror" %>
-
-	<p><%= label_tag 'Naam van de track' %>
-	<%= f.text_field :name %></p>
-	
-	<%= error_message_on "track", "mp3", :css_class => "formerror" %>
-	
-	<p><%= label_tag 'Bestand' %>
-	<%= f.file_field :mp3 %></p>
-	
-	<%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %>
-
-	<p><%= submit_tag 'submit' %></p>
-	<% end -%>
 </div>
