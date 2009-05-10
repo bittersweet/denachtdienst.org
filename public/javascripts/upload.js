@@ -134,6 +134,7 @@ var Upload = {
 				.text('Upload 0 Files');
 		}
 		console.log("upload complete");
+		window.location="/";
 		
 		// Start Next Upload
 		swfu.startUpload();
