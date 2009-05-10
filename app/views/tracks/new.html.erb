@@ -12,6 +12,14 @@
 		var settings = {
 			upload_url: "/tracks/create",
 			flash_url: "/flash/swfupload.swf",
+			
+			//Button settings
+			button_placeholder_id: 'browse',
+			button_image_url: "/images/upload.png",
+			button_width: "61",
+			button_height: "22",
+      button_action: SWFUpload.BUTTON_ACTION.SELECT_FILE,
+    	
       post_params : {
       		"name" : '$("#")',
       		"user_id" : "<%= current_user.id %>"
@@ -20,9 +28,11 @@
         'name' : 'test'
       },
 			file_size_limit: "<%= 3.megabytes %>",
+			file_upload_limit : 1,
 			file_types: "*.mp3;",
 			file_types_description: "Mp3 Audio Files",
-
+			
+			//Handlers
 			file_queued_handler: Upload.file_queued,
 			file_dialog_complete_handler: Upload.file_dialog_complete,
 			upload_start_handler: Upload.upload_start,
@@ -47,8 +57,9 @@
 	});
 </script>
 
+<span id="browse"></span>
+
 <div class="buttons">
-	<button id="browse" class="browse">Browse</button>
 	<button id="upload" class="upload">Upload 0 Files</button>
 </div>
 
