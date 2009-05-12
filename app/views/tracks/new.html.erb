@@ -27,7 +27,7 @@
       file_params : {
         'name' : 'test'
       },
-			file_size_limit: "<%= 3.megabytes %>",
+			file_size_limit: "<%= 10.megabytes %>",
 			file_upload_limit : 1,
 			file_types: "*.mp3;",
 			file_types_description: "Mp3 Audio Files",
@@ -40,8 +40,6 @@
 			upload_error_handler: Upload.upload_error,
 			upload_success_handler: Upload.upload_success,
 			upload_complete_handler: Upload.upload_complete,
-
-			debug: true // Set to true to find out why things aren't working
 		};
 		
 		Upload
@@ -68,23 +66,21 @@
 </div>
 
 <div class="standard_form">
+ 
+  <% form_for :track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
+ 
+  <%= error_message_on "track", "name", :css_class => "formerror" %>
+ 
+  <p><%= label_tag 'Naam van de track' %>
+  <%= f.text_field :name %></p>
   
-<%= error_messages_for :track %>
-<% form_for :track, :url => { :action => "create" }, :method => :post, :html => { :multipart => true } do |f| %>
-	<fieldset>
-		<div class="message">
-			Only jpg files are allowed.
-		</div>
-		<ol>
-			<li>
-				<label for="photo_file">Photo File</label>
-				<%= f.file_field :file %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-		<%= f.submit 'Upload Image', :class => 'button upload' %>
-	</div>
-<% end %>
+  <%= error_message_on "track", "mp3", :css_class => "formerror" %>
+  
+  <p><%= label_tag 'Bestand' %>
+  <%= f.file_field :mp3 %></p>
 
+  <%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %>
+
+  <p><%= submit_tag 'submit' %></p>
+  <% end -%>
 </div>
