@@ -5,10 +5,8 @@ class TracksController < ApplicationController
   cache_sweeper :track_sweeper,
                 :only => [:create, :update, :destroy]
 
-  protect_from_forgery :only => [:destroy] 
+  protect_from_forgery :only => [:create, :destroy]
 
-
-  #Only need to login if you want to create a new track
   before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
@@ -94,12 +92,7 @@ class TracksController < ApplicationController
   # ups the playcount by one
   def raise_playcount
     Track.update_counters params[:id], :playcount => 1
-    
     head :created, :location => track_path(21)
-    #returns 201 Created [/tracks/:id/playcount]
-    
-    # render :nothing => true
-    
   end
 
 end

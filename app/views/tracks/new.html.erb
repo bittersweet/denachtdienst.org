@@ -8,7 +8,7 @@
 	$(document).ready(function() {
 		// Setup SWFU object
 		var settings = {
-			upload_url: "/tracks/create",
+			upload_url: "<%= create_track_path_with_session_information %>",
 			flash_url: "/flash/swfupload.swf",
 			
 			//Button settings
@@ -17,7 +17,7 @@
 			button_width: "61",
 			button_height: "22",
       button_action: SWFUpload.BUTTON_ACTION.SELECT_FILE,
-    	
+
     	//File settings
       file_size_limit: "<%= 10.megabytes %>",
 			file_upload_limit : 1,
@@ -78,7 +78,8 @@
 </script>
 
 <div class="standard_form">
- 
+  
+  
   <% form_for :track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
  
   <%= error_message_on "track", "name", :css_class => "formerror" %>
