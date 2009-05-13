@@ -12,13 +12,14 @@
 			flash_url: "/flash/swfupload.swf",
 			
 			//Button settings
-			button_placeholder_id: 'browse',
+			button_placeholder_id: 'track_mp3',
 			button_image_url: "/images/upload.png",
 			button_width: "61",
 			button_height: "22",
       button_action: SWFUpload.BUTTON_ACTION.SELECT_FILE,
     	
-			file_size_limit: "<%= 10.megabytes %>",
+    	//File settings
+      file_size_limit: "<%= 10.megabytes %>",
 			file_upload_limit : 1,
 			file_types: "*.mp3;",
 			file_types_description: "Mp3 Audio Files",
@@ -35,12 +36,23 @@
 				
 		swfu = new SWFUpload(settings);
 		
-		// Disable Upload Button
-		$('#upload').addClass('disabled').attr('disabled', 'true');
-		
+    // $("#upload_track").attr("disabled", "true").hide();
+				
 		// Add Event Handlers
-		$('#browse').click(function() { swfu.selectFiles(); });
-		$('#upload').click(function() { 
+		$('#track_mp3').click(function(event) { 
+
+      // Prevent default action bound to this button
+		  event.preventDefault();
+		  
+		  // Open the file browse dialog
+		  swfu.selectFiles(); 
+		  
+		});
+		
+		$('#upload_track').click(function(event) { 
+		  
+		  event.preventDefault();
+		  $(".progress").show();
 		  
 		  var trackname = $("#track_name").val();
 		  
@@ -53,16 +65,6 @@
 	});
 </script>
 
-<span id="browse"></span>
-
-<div class="buttons">
-	<button id="upload" class="upload">Upload 0 Files</button>
-</div>
-
-<div class="progress">
-  <div></div>
-</div>
-
 <div class="standard_form">
  
   <% form_for :track, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
@@ -73,12 +75,17 @@
   <%= f.text_field :name %></p>
   
   <%= error_message_on "track", "mp3", :css_class => "formerror" %>
+
+  <div class="progress">
+    <div></div>
+  </div>
   
   <p><%= label_tag 'Bestand' %>
+  <span id="filequeue"></span>
   <%= f.file_field :mp3 %></p>
 
   <%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %>
 
-  <p><%= submit_tag 'submit' %></p>
+  <p><%= submit_tag 'Upload track', :id => "upload_track" %></p>
   <% end -%>
 </div>

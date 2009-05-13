@@ -228,17 +228,26 @@ a.button:hover{
 	font-size: smaller;
 }
 
-div.progress
-{
+
+/* JS File upload */
+
+div.progress{
+	display: none;
 	border: 1px solid #C2E3EF;
 	text-align: left;
 	height: 6px;
 	width: 98px;
 }
 
-div.progress div
-{
+div.progress div{
 	background: #7BB963;
 	height: 6px;
 	width: 0;
+}
+
+#filequeue{
+	float: left;
+	padding-right: 20px;
+	font-size: smaller;
+	font-weight: normal;
 }

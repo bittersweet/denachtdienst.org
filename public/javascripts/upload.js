@@ -42,11 +42,7 @@ var Upload = {
 	*/
 	file_queued: function(file)
 	{
-		div = $('<div></div>').attr({ 'id': file.id, 'class': 'photo' });
-		div.append($('<div></div>').attr('class', 'name').html(file.name.substring(0, 10) + '...'));
-		div.append($('<div></div>').attr('class', 'status').html('pending'));
-		div.append($('<div></div>').attr('class', 'progress').append($('<div></div>')));
-		$('#images').prepend(div);
+		div = $('#filequeue').html(file.name.substring(0, 30));
 	},
 
 	/* 
