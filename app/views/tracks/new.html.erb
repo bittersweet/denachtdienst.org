@@ -36,10 +36,21 @@
 		};
 				
 		swfu = new SWFUpload(settings);
-		
-    // $("#upload_track").attr("disabled", "true").hide();
+		var upload_track_button = $("#upload_track");
+    upload_track_button.attr("disabled", "true");
 				
 		// Add Event Handlers
+		$("#track_name").bind("keyup", function(){
+
+  	  var track_name_input = $("#track_name").val();
+
+		  if (track_name_input.length == 0) {
+        upload_track_button.attr("disabled", "true");
+		  }else{
+        upload_track_button.removeAttr("disabled");
+		  };	    
+	  });
+	
 		$('#track_mp3').click(function(event) { 
 
       // Prevent default action bound to this button
