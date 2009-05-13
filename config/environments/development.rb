@@ -13,8 +13,5 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
-config.cache_store = :file_store, RAILS_ROOT + "/public/cache"
-# config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
-  
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false

@@ -12,7 +12,6 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
   config.load_paths += %W( #{RAILS_ROOT}/app/sweepers #{RAILS_ROOT}/app/middleware )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
@@ -40,11 +39,4 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-  config.action_controller.session = {
-    :session_key => '_denachtdienst.org_session',
-    :secret      => '6d473488da377ac2343099e580abc02d35c2ee4d2802a1fcab289ccb99d4ae87c543b7460fab45003df93ba08450d9e8f33589de2aaec96fabd9284641601e21'
-  }
-  
-  ActionController::Dispatcher.middleware.use FlashSessionCookie, config.action_controller.session_options[:session_key]
-
 end
