@@ -9,7 +9,7 @@ ActionController::Base.session = {
   :secret      => '6d473488da377ac2343099e580abc02d35c2ee4d2802a1fcab289ccb99d4ae87c543b7460fab45003df93ba08450d9e8f33589de2aaec96fabd9284641601e21'
 }
 
-# ActionController::Dispatcher.middleware.use FlashSessionCookie, ActionController::Base.session_options[:session_key]
+ActionController::Dispatcher.middleware.use FlashSessionCookieMiddleware, ActionController::Base.session_options[:session_key]
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
