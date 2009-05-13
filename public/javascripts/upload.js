@@ -42,6 +42,7 @@ var Upload = {
 	*/
 	file_queued: function(file)
 	{
+		console.log('file_queued');
 		div = $('#filequeue').html(file.name.substring(0, 30));
 	},
 
@@ -90,7 +91,7 @@ var Upload = {
 	upload_error: function(file, code, message)
 	{
 		// Just a test error message
-		console.log('MASSIVE ERROR!!!1');
+		// console.log('MASSIVE ERROR!!!1');
 	},
 	
 	/* 
@@ -106,7 +107,6 @@ var Upload = {
 	upload_success: function(file, data)
 	{
 		$('#' + file.id).html($(data).html());
-		console.log("upload succes je weet zelf");
 	},
 
 	/* 
@@ -164,7 +164,13 @@ var Upload = {
 	before the File Selection Dialog window is displayed. However, the event may not execute until after 
 	the Dialog window is closed.
 	*/
-	file_dialog_start: function() {},
+	file_dialog_start: function() {
+		
+		div = $('#filequeue').html("");
+
+		this.cancelUpload();
+		
+	},
 	
 	/* 
 	File Queue Error
