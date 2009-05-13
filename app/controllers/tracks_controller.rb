@@ -9,7 +9,7 @@ class TracksController < ApplicationController
 
 
   #Only need to login if you want to create a new track
-  # before_filter :login_required, :only => [ :new, :destroy ]
+  before_filter :login_required, :only => [ :new, :destroy ]
 
   def index
       @track = Track.all.reverse
@@ -22,7 +22,6 @@ class TracksController < ApplicationController
   
   def create
     if params[:Filedata]
-      @user = current_user
       @track = Track.new(:swfupload_file => params[:Filedata], :name => params[:name], :user_id => params[:user_id])
 
       if @track.save
