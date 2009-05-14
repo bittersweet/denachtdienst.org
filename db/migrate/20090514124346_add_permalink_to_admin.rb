@@ -1,6 +1,6 @@
 class AddPermalinkToAdmin < ActiveRecord::Migration
   def self.up
-    user = User.find_by_name("admin")
+    user = User.find_by_login("admin")
     user.save
   end
 
