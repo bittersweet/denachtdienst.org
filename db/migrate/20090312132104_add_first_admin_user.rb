@@ -5,7 +5,6 @@ class AddFirstAdminUser < ActiveRecord::Migration
 		user.login = "admin"
 		user.name = "admin"
 		user.email = "markmulder@gmail.com"
-		user.permalink = "admin"
 		user.password = "password"
 		user.password_confirmation = "password"
 		user.avatar_file_name = "null.jpg"
