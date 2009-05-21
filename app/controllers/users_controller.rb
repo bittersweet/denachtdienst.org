@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   protect_from_forgery :only => [:create, :update, :destroy] 
   
-  caches_page :show
+  caches_page :show, :index
   
   cache_sweeper :user_sweeper,
                 :only => [:update, :destroy]  

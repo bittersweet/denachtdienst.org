@@ -18,9 +18,11 @@ class TrackSweeper < ActionController::Caching::Sweeper
       @loggedinuser = current_user.id
     end
     
+    @user = User.find(@loggedinuser)
+    
     expire_page :controller => :tracks, :action => :show, :id => track
     expire_page :controller => :tracks, :action => :index
-    expire_page :controller => :users, :action => :show, :id => @loggedinuser
+    expire_page :controller => :users, :action => :show, :id => @user.permalink
     expire_page :controller => :tracks, :action => :rss
     expire_page '/index.html'
   end
