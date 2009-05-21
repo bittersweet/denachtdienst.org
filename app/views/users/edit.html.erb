@@ -12,6 +12,9 @@
 	
 	<p><%= f.label :email, "Email address" %>
 	<%= f.text_field :email %></p>
+	
+	<%= f.label :bio, "Biografie" %>
+	<%= f.text_area :bio, :size => "27x5" %>
 
 	<%= error_message_on "user", "avatar", :css_class => "formerror" %>
 	
