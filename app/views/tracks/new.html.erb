@@ -84,7 +84,7 @@
  
   <%= error_message_on "track", "name", :css_class => "formerror" %>
  
-  <p><%= label_tag 'Naam van de track' %>
+  <p><%= label(:track, :name, "Naam van de track") %>
   <%= f.text_field :name %></p>
   
   <%= error_message_on "track", "mp3", :css_class => "formerror" %>
@@ -93,11 +93,11 @@
     <div></div>
   </div>
   
-  <p><%= label_tag 'Bestand' %>
+  <p><%= label(:track, :mp3, "Bestand") %>
   <span id="filequeue"></span>
   <%= f.file_field :mp3 %></p>
 
-  <%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %>
+  <p><%= hidden_field(:track, :user_id, options = {"value" => "#{current_user.id}"}) %></p>
 
   <p><%= submit_tag 'Upload track', :id => "upload_track" %></p>
   <% end -%>
