@@ -1,9 +1,4 @@
 # redirect http://denachtdienst.org to the full domain
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^denachtdienst.org [NC]
-RewriteRule ^(.*)$ http://www.denachtdienst.org/$1 [L,R=301]
-
-# redirect every subdomain request to the full domain, exclude www. so it does not loop
-RewriteCond %{HTTP_HOST} !www.denachtdienst.org$ [NC]
-RewriteCond %{HTTP_HOST} ^(www.)?([a-z0-9-]+).denachtdienst.org [NC]
-RewriteRule ^(.*) http://www.denachtdienst.org/ [L,R=301]
+RewriteCond %{HTTP_HOST} ^denachtdienst.org
+RewriteRule (.*) http://www.denachtdienst.org/ [R=301,L]
