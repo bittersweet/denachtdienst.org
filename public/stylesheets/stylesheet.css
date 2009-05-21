@@ -79,11 +79,6 @@ li#intro{
 	margin: 10px auto;
 }
 
-#wrapper{
-  width: 500px;
-  margin: 50px auto;
-}
-
 #footer{
 	margin: 50px auto;
 	width: 520px;
@@ -248,4 +243,62 @@ div.progress div{
 	padding-right: 20px;
 	font-size: smaller;
 	font-weight: normal;
+}
+
+
+/* User profiles on frontpage */
+
+#user-wrapper{
+/*  margin: 50px auto;*/
+margin-top: 50px;
+background: rgb(244, 246, 245);
+height: 180px;
+/*width: 800px;*/
+}
+
+.user{
+  width: 270px;
+  height: 120px;
+  margin-top: 20px;
+  padding: 0px 20px 20px 40px;
+  float: left;
+  border-right: 1px solid rgb(204, 204, 204);
+}
+
+.user p{
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.user h2, h4{
+  font-family: Verdana;
+  color: #232d7a;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.05em;
+  line-height: 18px;
+}
+
+.user h4{
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.last-track{
+  margin-top: 0px;
+  font-weight: bolder;
+}
+
+.btn a{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  text-shadow: 1px 1px 0 #FFF;
+  background:#fefefe url(/images/btn-bg.jpg) repeat-x 0 100%;
+  border:1px solid #CCC;
+  display:block;
+  float:left;
+  font-size:12px;
+  font-weight:bold;
+  padding:3px 10px;
+  text-decoration:none;
 }
