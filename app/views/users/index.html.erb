@@ -14,12 +14,14 @@
       
       <p class="bio"><%= h(u.bio) %></p>
     
-      <h4 class="track">Laatste track:</h4>
-      <% if u.tracks.empty? %>
-        <p class="last-track">Nog geen tracks</p>
-      <% else %>
-        <p class="last-track"><%= u.tracks.last.name %></p>
-      <% end %>
+      <div class="laatste-track">
+        <h4>Laatste track:</h4>
+        <% if u.tracks.empty? %>
+          <p class="last-track">Nog geen tracks</p>
+        <% else %>
+          <p class="last-track"><%= u.tracks.last.name %></p>
+        <% end %>
+      </div>
   
     <p class="user-button">
       <%= link_to( "Luister tracks", u) %>

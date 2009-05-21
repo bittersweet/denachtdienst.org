@@ -274,7 +274,7 @@ div.progress div{
   line-height: 18px;
 }
 
-.user h2, h4{
+.user h2, .laatste-track h4{
   font-family: Verdana;
   color: #232d7a;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
@@ -283,7 +283,7 @@ div.progress div{
   line-height: 18px;
 }
 
-.user h4{
+.laatste-track h4{
   margin-top: 10px;
   font-size: 12px;
 }
@@ -293,8 +293,14 @@ div.progress div{
   margin: 10px 12px 0 0;
 }
 
+.laatste-track{
+  clear: both;
+  padding-top: 0px;
+}
+
 .last-track{
-  margin-top: 0px;
+  margin-top: 10px;
+  margin: 0;
   font-weight: bolder;
 }
 
