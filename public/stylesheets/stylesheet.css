@@ -80,15 +80,13 @@ li#intro{
 }
 
 #wrapper{
+  width: 500px;
+  margin: 50px auto;
 }
 
 #footer{
-	margin: 0 auto;
+	margin: 50px auto;
 	width: 520px;
-}
-
-#footer{
-	margin-top: 50px;
 	height: 160px;
 	background: #8B8BB1;
 }
