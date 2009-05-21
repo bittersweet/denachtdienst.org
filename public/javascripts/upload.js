@@ -192,4 +192,4 @@ var Upload = {
 	console (a text box dynamically added to the end of the page body).
 	*/
 	debug: function(message) {}
-}
+};
