@@ -1,32 +1,37 @@
 <% content_for :title, "Homepage" %>
 <% content_for :meta, "Website van de Nachtdienst, een vriendengroep die veel bezig is met muziek" %>
 
-<div id="user-wrapper">
+<div id="user-container">
+  <div id="user-wrapper">
 
-<% @user.each do |u| %>
+  <% @user.each do |u| %>
 
-  <div class="user">
+    <div class="user">
 
-    <h2><%= link_to(u.name, user_path(u)) %></h2>
-    <p class="bio"><%= u.name %> is een brute gast. Vraag iedereen en ze zullen het je vertellen. Hij is 1 meter 80 maar groter dan die 2 meter gastjes.</p>
+      <h2><%= link_to(u.name, user_path(u)) %></h2>
+      
+      <div class="user-avatar"><%= image_tag u.avatar.url(:thumb), :width => "40px", :height => "40px" %></div>
+      
+      <p class="bio"><%= u.name %> oftewel Kajan Chow is een dope gozer. Hij draait loeistrak.</p>
     
-    <h4 class="track">Laatste track:</h4>
-    <% if u.tracks.empty? %>
-      <p class="last-track">Nog geen tracks</p>
-    <% else %>
-      <p class="last-track"><%= u.tracks.last.name %></p>
-    <% end %>
+      <h4 class="track">Laatste track:</h4>
+      <% if u.tracks.empty? %>
+        <p class="last-track">Nog geen tracks</p>
+      <% else %>
+        <p class="last-track"><%= u.tracks.last.name %></p>
+      <% end %>
   
-  <p class="user-button">
-    <a href="#">Luister tracks</a>
-  </p>
+    <p class="user-button">
+      <%= link_to( "Luister tracks", u) %>
+    </p>
   
+    </div>
+
+  <% end %>
+
   </div>
-
-<% end %>
-
 </div>
 
 <div id="credits">
-	<p>Volg ons op twitter: <a href="http://www.twitter.com/nachtdienst" title="">@nachtdienst</a> &mdash; een <a href="http://www.ikbenbitterzoet.com" title="ik ben Bitterzoet">Bitterzoet</a> productie</p>
+  <p>Volg ons op twitter: <a href="http://www.twitter.com/nachtdienst" title="">@nachtdienst</a> &mdash; een <a href="http://www.ikbenbitterzoet.com" title="ik ben Bitterzoet">Bitterzoet</a> productie</p>
 </div>

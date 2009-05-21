@@ -248,18 +248,22 @@ div.progress div{
 
 /* User profiles on frontpage */
 
-#user-wrapper{
+#user-container{
   background: rgb(244, 246, 245);
-  height: 180px;
   padding: 25px 0 25px 0;
-  border-bottom: 1px solid rgb(204, 204, 204);
+  border-bottom: 1px solid rgb(204, 204, 204);  
+}
+
+#user-wrapper{
+  width: auto;
+  display: inline-block;
 }
 
 .user{
   width: 270px;
-  height: 120px;
+  height: 140px;
   margin-top: 20px;
-  padding: 0px 20px 20px 40px;
+  padding: 0px 20px 40px 40px;
   float: left;
   border-right: 1px solid rgb(204, 204, 204);
 }
@@ -281,6 +285,11 @@ div.progress div{
 .user h4{
   margin-top: 10px;
   font-size: 12px;
+}
+
+.user-avatar{
+  float: left;
+  margin: 10px 5px 0 0;
 }
 
 .last-track{
