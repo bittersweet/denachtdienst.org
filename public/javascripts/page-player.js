@@ -26,6 +26,12 @@ function raise_playcount(){
 	
 }
 
+function show_timer(){
+
+  $("#sm2_timing").removeClass("hidden");
+
+}
+
 function PagePlayer(oConfigOverride) {
   var self = this;
   var pl = this;
@@ -238,12 +244,12 @@ function PagePlayer(oConfigOverride) {
     // handlers for sound events as they're started/stopped/played
 
     play: function() {
+      show_timer(this._data.oLI);
       pl.removeClass(this._data.oLI,this._data.className);
       this._data.className = pl.css.sPlaying;
       pl.addClass(this._data.oLI,this._data.className);
       self.setPageTitle(this._data.originalTitle);
-	  raise_playcount(this._data.oLI);
-
+	    raise_playcount(this._data.oLI);
     },
 
     stop: function() {

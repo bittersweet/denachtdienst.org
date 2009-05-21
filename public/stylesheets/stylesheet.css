@@ -56,6 +56,7 @@ p, input{
 }
 
 li#intro{
+  height: 55px;
 	background-color: rgb(29, 80, 02);
 	color: #fff;
 	padding-left: 22px;
