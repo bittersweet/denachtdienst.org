@@ -264,7 +264,7 @@ div.progress div{
   width: 270px;
   height: 140px;
   margin-top: 20px;
-  padding: 0px 20px 40px 40px;
+  padding: 0px 25px 40px 40px;
   float: left;
   border-right: 1px solid rgb(204, 204, 204);
 }
@@ -290,7 +290,7 @@ div.progress div{
 
 .user-avatar{
   float: left;
-  margin: 10px 5px 0 0;
+  margin: 10px 12px 0 0;
 }
 
 .last-track{
