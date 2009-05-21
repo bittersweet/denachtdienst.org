@@ -14,8 +14,12 @@
     <% if u.tracks.empty? %>
       <p class="last-track">Nog geen tracks</p>
     <% else %>
-      <p class="last-track"><%= link_to(h(u.tracks.last.name), track_path(u.tracks.last))%></p>
+      <p class="last-track"><%= u.tracks.last.name %></p>
     <% end %>
+  
+  <p class="user-button">
+    <a href="#">Luister tracks</a>
+  </p>
   
   </div>
 
