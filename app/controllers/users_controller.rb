@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [ :edit, :update, :manage, :profile ]  
   
   def index
-    @user = User.all
+    @user = User.find(:all, :order => "name ASC")
   end
   
   def show
