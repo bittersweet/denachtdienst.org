@@ -28,7 +28,7 @@ function raise_playcount(){
 
 function show_timer(){
 
-  $("#sm2_timing").removeClass("hidden");
+  $(".timing").removeClass("hidden");
 
 }
 
