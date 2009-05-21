@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
 
-  caches_page :index, :show, :rss
+  caches_page :index, :show
 
   cache_sweeper :track_sweeper,
                 :only => [:create, :update, :destroy]
@@ -24,6 +24,7 @@ class TracksController < ApplicationController
 
       if @track.save
         render :nothing => true
+        twitter_update("[DND] Nieuwe track: " + @track.name + " (http://www.denachtdienst.org)")
       else
         render :text => "error"
       end
