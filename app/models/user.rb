@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
 
   has_many :tracks
   has_attached_file :avatar,
-                    :styles => {  :thumb => "100x100#",
+                    :styles => {  :small => "40x40#",
+                                  :thumb => "100x100#",
                                   :medium => "200x200>" }
 
   belongs_to :invitation
