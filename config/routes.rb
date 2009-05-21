@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup/:invitation_token', :controller => 'users', :action => 'new'
   map.edit_profile '/users/profile/edit', :controller => 'users', :action => 'edit'
   map.change_password '/change_password', :controller => 'passwords', :action => 'index'
-  map.resources :users, :has_many => :tracks, :collection => { :profile => :get, :manage => :get }
+  map.resources :users, :has_many => :tracks, :collection => { :profile => :get, :manage => :get, :index => :get }
   map.resources :tracks
   map.playcount '/tracks/:id/playcount', :controller => 'tracks', :action => 'raise_playcount'
   map.resource :session

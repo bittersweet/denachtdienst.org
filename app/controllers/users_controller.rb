@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   
   before_filter :login_required, :only => [ :edit, :update, :manage, :profile ]  
   
+  def index
+    @user = User.all
+  end
+  
   def show
     if User.exists?(:permalink => params[:id])
       @user = User.find_by_permalink(params[:id])

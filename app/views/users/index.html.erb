@@ -1,0 +1,14 @@
+<% content_for :title, "Homepage" %>
+<% content_for :meta, "Website van de Nachtdienst, een vriendengroep die veel bezig is met muziek" %>
+
+<div id="wrapper">
+
+<% @user.each do |u| %>
+
+  <%= u.name %>
+
+<% end %>
+
+</div>
+
+<%= render "/layouts/footer" %>
