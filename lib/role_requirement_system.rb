@@ -110,7 +110,8 @@ module RoleRequirementSystem
     
     def access_denied
       if logged_in?
-        render_optional_error_file(401)
+        # render_optional_error_file(401)
+        redirect_to root_path
         return false
       else
         super

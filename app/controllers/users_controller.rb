@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     success = @user && @user.save
     if success && @user.errors.empty?
       self.current_user = @user # !! now logged in
-      redirect_back_or_default('/')
+      redirect_to profile_users_path
       flash[:notice] = "Je bent geregistreerd."
     else
       flash[:error]  = "Het ging niet helemaal goed..."

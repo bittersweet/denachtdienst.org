@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.playcount '/tracks/:id/playcount', :controller => 'tracks', :action => 'raise_playcount'
   map.resource :session
   map.resources :invitations
-  map.root :controller => 'tracks'
+  map.root :controller => 'users'
 
   #rss feeds
   map.rss '/rss', :controller => 'tracks', :action => 'rss'
