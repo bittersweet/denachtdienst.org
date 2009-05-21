@@ -1,8 +1,6 @@
 <% content_for :title, "All tracks" %>
 <% content_for :meta, "Website van de Nachtdienst, een vriendengroep die veel bezig is met muziek" %>
 
-<div id="wrapper">
-
 	<ul class="playlist">
 	  <li id="intro">Nightshift baby!</li>
 	<% @track.each do |t| %>
@@ -10,8 +8,6 @@
 		</li>
 	<% end %>
 	</ul>
-
-</div>
 
 <%= render "/tracks/pageplayer" %>
 
