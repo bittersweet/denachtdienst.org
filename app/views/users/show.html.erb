@@ -1,6 +1,7 @@
 <% content_for :title, @user.name %>
 <% content_for :meta, "Alle tracks van #{@user.name}" %>
 <% content_for :head do %>
+  <%= javascript_include_merged :player %>
 	<%= auto_discovery_link_tag :rss, {:controller => "tracks", :action => "userrss"}, :title => "RSS per artiest" %>
 <% end %>
 

@@ -1,4 +1,7 @@
 <%= content_for :title, @track.name %>
+<% content_for :head do %>
+  <%= javascript_include_merged :player %>
+<% end %>
 
 <div id="wrapper">
 	<ul class="playlist">

@@ -2,7 +2,7 @@
 javascripts: 
 - base: 
   - jquery
-  # - jrails
+- player:
   - soundmanager2
   - page-player
 stylesheets: 
