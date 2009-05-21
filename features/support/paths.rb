@@ -9,7 +9,7 @@ module NavigationHelpers
     case page_name
     
     when /the list of tracks/
-      root_path
+      tracks_path
       
     when /the profile page/
       profile_users_path
