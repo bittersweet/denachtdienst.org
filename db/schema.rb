@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090522120956) do
+ActiveRecord::Schema.define(:version => 20090522130245) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "sender_id"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20090522120956) do
     t.string   "mp3_file_name"
     t.string   "mp3_content_type"
     t.string   "mp3_file_size"
-    t.integer  "playcount",        :default => 0
   end
 
   create_table "users", :force => true do |t|
