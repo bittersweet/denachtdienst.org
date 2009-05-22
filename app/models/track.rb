@@ -2,8 +2,9 @@ require 'mime/types'
 
 class Track < ActiveRecord::Base
   belongs_to :user
+  has_many :stats
   
-  has_attached_file :mp3 
+  has_attached_file :mp3
   
   validates_presence_of :name, :message => "Je moet wel een naam invoeren"
   validates_presence_of :user_id

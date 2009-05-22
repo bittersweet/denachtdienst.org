@@ -90,9 +90,9 @@ class TracksController < ApplicationController
     end
   end
   
-  # ups the playcount by one
   def raise_playcount
-    Track.update_counters params[:id], :playcount => 1
+    @track = Track.find(params[:id])
+    @track.stats.create(:ip => request.env['REMOTE_ADDR'], :browser => request.env['HTTP_USER_AGENT'], :played_at => Time.now)
     head :created, :location => track_path(21)
   end
 
