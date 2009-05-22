@@ -3,9 +3,9 @@
 <div id="wrapper">
 
   <ul id="tracklist">
-    <li id="intro"><%= @user.name %></li>
+    <li id="intro"><%= current_user.name %></li>
     <% @track.each do |t| %>
-    <li><%= trackname_with_stats(t.name, t.stats.count) %>
+    <li><%= trackname_with_stats(t.name, t.stats.length) %>
       <span class="track-meta">
       <%= link_to image_tag("file_delete.png", :alt => 'Delete'), t, :confirm =>  'Weet je het zeker?', :method => :delete %>
       <%= link_to image_tag("file_edit.png", :alt => 'Edit'), edit_track_path(t) %>
