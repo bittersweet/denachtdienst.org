@@ -121,6 +121,12 @@ li#intro{
 
 /* Typography / Links */
 
+span.playcount{
+  margin-left: 6px;
+  font-size: 10pt;
+  color: red;
+}
+
 a{
 	color: #333;
 	text-decoration: none;

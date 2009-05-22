@@ -5,16 +5,13 @@
 	<ul id="tracklist">
     <li id="intro"><%= @user.name %></li>
 	  <% @track.each do |t| %>
-		  <li><%= link_to(h(t.name), t.mp3.url) %>
-			<% if logged_in? %>
-				<% if current_user.id == @user.id %>
-				<%= link_to image_tag("file_delete.png", :alt => 'Delete'), t, :confirm =>  'Weet je het zeker?', :method => :delete %>
-				<%= link_to image_tag("file_edit.png", :alt => 'Edit'), edit_track_path(t) %>
-			    <% end %>
-			<% end %>
+		  <li><%= link_to("#{t.name} <span class=\"playcount\">(#{t.stats.count})</span>", t.mp3.url) %>
+			<div style="float: right; padding-right: 20px;">
+			<%= link_to image_tag("file_delete.png", :alt => 'Delete'), t, :confirm =>  'Weet je het zeker?', :method => :delete %>
+			<%= link_to image_tag("file_edit.png", :alt => 'Edit'), edit_track_path(t) %>
 			<%= link_to image_tag("download.png", :alt => 'Download'), t.mp3.url %>
 			<%= link_to image_tag("attach.png", :alt => 'Link'), t %>		
-		
+</div>		
 		</li>
 	<% end %>
 	</ul>	
