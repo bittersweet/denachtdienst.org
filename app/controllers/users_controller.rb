@@ -41,14 +41,8 @@ class UsersController < ApplicationController
   end
 
   def manage
-    
-    @track = Track.find(:all, :include => [ :user, :stats ] )
-    
-    #   
-    # @user = User.find(current_user.id)
-    # @track = Track.find(:all, :conditions => "user_id = 1", :include => :stats)
-    # # @track = @user.tracks.reverse
-
+    @user = current_user
+    @track = Track.find(:all, :conditions => "user_id = #{@user.id}", :order => "id DESC", :include => [ :user, :stats ] )
   end
   
   def status

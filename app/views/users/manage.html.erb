@@ -3,7 +3,7 @@
 <div id="wrapper">
 
   <ul id="tracklist">
-    <li id="intro"><%= current_user.name %></li>
+    <li id="intro"><%= @user.name %></li>
     <% @track.each do |t| %>
     <li><%= trackname_with_stats(t.name, t.stats.length) %>
       <span class="track-meta">
