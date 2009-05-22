@@ -1,5 +1,13 @@
 module UsersHelper
-  
+    
+  def trackname_with_stats(name, count)    
+    if count == 0
+      trackname = name
+    else
+      trackname = "#{name} <span class='playcount'>(#{count})</span>"
+    end      
+  end
+
   #
   # Use this to wrap view elements that the user can't access.
   # !! Note: this is an *interface*, not *security* feature !!

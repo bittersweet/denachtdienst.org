@@ -91,7 +91,7 @@ class TracksController < ApplicationController
   end
   
   def raise_playcount
-    Stat.update_playcount("94", request.env)
+    Stat.update_playcount(params["id"], request.env)
     head :created, :location => track_path(21)
   end
 

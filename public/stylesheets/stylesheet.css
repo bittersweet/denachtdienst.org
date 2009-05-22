@@ -121,12 +121,6 @@ li#intro{
 
 /* Typography / Links */
 
-span.playcount{
-  margin-left: 6px;
-  font-size: 10pt;
-  color: red;
-}
-
 a{
 	color: #333;
 	text-decoration: none;
@@ -163,6 +157,17 @@ h1.username{
 	line-height: 2.5em;
 	padding-left: 22px;
 	border-bottom: 1px solid #cacaca;
+}
+
+.track-meta{
+  float: right;
+  padding-right: 2%;
+}
+
+span.playcount{
+  margin-left: 6px;
+  font-size: 10pt;
+  color: red;
 }
 
 /* Form related styles */
