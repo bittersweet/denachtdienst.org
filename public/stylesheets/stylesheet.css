@@ -153,6 +153,7 @@ h1.username{
 /* Tracklisting */
 
 #tracklist li{
+  position: relative;
 	font-family: Georgia, serif;
 	line-height: 2.5em;
 	padding-left: 22px;
@@ -160,7 +161,8 @@ h1.username{
 }
 
 .track-meta{
-  float: right;
+  position: absolute;
+  right: 0;
   padding-right: 2%;
 }
 
